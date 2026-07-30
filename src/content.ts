@@ -138,16 +138,3 @@ export const quoteCopy: Record<Locale, string> = {
   bg: 'Народ, който не почита традициите си, е обречен на забвение.',
   en: 'A nation that does not honor its traditions is doomed to be forgotten.',
 };
-
-export const details: Record<Locale, { title: string; body: string }> = {
-  bg: {
-    title: 'Как започваме',
-    body:
-      'Първо изграждаме една ясна страница, после я разделяме на смислени модули, а накрая можем да я превърнем в мултистранично преживяване или CMS-базирана платформа.',
-  },
-  en: {
-    title: 'How we begin',
-    body:
-      'We start with one clear page, then split it into meaningful modules, and later turn it into a multi-page experience or CMS-backed platform.',
-  },
-};

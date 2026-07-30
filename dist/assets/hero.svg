@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="3840" height="2160" viewBox="0 0 3840 2160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b1b11" />
+      <stop offset="45%" stop-color="#2b1b11" />
+      <stop offset="100%" stop-color="#0e0806" />
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f2c78b" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#8a5e2e" stop-opacity="0.0" />
+    </linearGradient>
+    <linearGradient id="greenTint" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7f8f39" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#1b2a10" stop-opacity="0.04"/>
+    </linearGradient>
+    <pattern id="ornament" width="120" height="120" patternUnits="userSpaceOnUse">
+      <rect width="120" height="120" fill="rgba(0,0,0,0)" />
+      <g transform="translate(60,60) scale(0.55)" fill="#232018">
+        <rect x="-60" y="-60" width="120" height="120" fill="none" />
+        <path d="M0,-48 L12,-24 L36,-12 L12,0 L0,24 L-12,0 L-36,-12 L-12,-24 Z" fill="#3b2f24" />
+      </g>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#sky)" />
+
+  <!-- distant mountains -->
+  <g transform="translate(0,220)">
+    <path d="M0,1300 C400,900 800,900 1200,1200 C1600,1500 2000,1100 2600,1300 C3000,1450 3400,1100 3840,1300 L3840,2160 L0,2160 Z" fill="#1f2219" opacity="0.45" />
+    <path d="M0,1100 C500,700 900,800 1400,1100 C1800,1400 2200,1000 2800,1200 C3200,1350 3600,1000 3840,1150 L3840,2160 L0,2160 Z" fill="#2b241f" opacity="0.6" />
+    <path d="M0,900 C300,650 700,650 1100,900 C1500,1150 1900,850 2400,1000 C2800,1150 3200,900 3840,1000 L3840,2160 L0,2160 Z" fill="#3b3028" />
+  </g>
+
+  <!-- sun glow -->
+  <circle cx="900" cy="420" r="420" fill="url(#sun)" />
+
+  <!-- foreground porch hint -->
+  <g transform="translate(2600,1250) scale(1)">
+    <rect x="-420" y="100" width="840" height="160" rx="16" fill="#24180f" opacity="0.95" />
+    <rect x="-380" y="-40" width="200" height="220" rx="10" fill="#2e2118" />
+    <rect x="-120" y="-30" width="320" height="120" rx="8" fill="#231710" />
+    <!-- book -->
+    <rect x="-320" y="-10" width="220" height="120" rx="6" fill="#3b2f24" />
+    <rect x="-300" y="-4" width="180" height="8" fill="#c9a178" opacity="0.9" />
+    <!-- cup -->
+    <ellipse cx="80" cy="70" rx="34" ry="18" fill="#1f1b16" />
+    <rect x="50" y="30" width="60" height="48" rx="10" fill="#1f1b16" />
+  </g>
+
+  <!-- green ornamental left stripe -->
+  <rect x="0" y="0" width="140" height="2160" fill="url(#greenTint)" opacity="0.32" />
+  <rect x="0" y="0" width="140" height="2160" fill="url(#ornament)" opacity="0.18" />
+
+  <!-- vignette -->
+  <rect width="100%" height="100%" fill="black" opacity="0.12" />
+</svg>
