@@ -1,17 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128" fill="none">
-  <defs>
-    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4e1b8" />
-      <stop offset="100%" stop-color="#d6a651" />
-    </linearGradient>
-  </defs>
-  <g stroke="url(#g5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M32 6v8" />
-    <path d="M32 50v8" />
-    <path d="M10 32h8" />
-    <path d="M46 32h8" />
-    <path d="M15 15l6 6" />
-    <path d="M43 43l6 6" />
-  </g>
-  <circle cx="32" cy="32" r="6" fill="url(#g5)" />
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <path d="M32 6C20 6 14 15 14 26c0 8 5 13 9 17v7h18v-7c4-4 9-9 9-17 0-11-6-20-18-20z" stroke="#bfa15f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M32 14v6M25 24h14M32 20l-3 4 3 4 3-4-3-4z" fill="#bfa15f" fill-opacity="0.2" stroke="#bfa15f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M26 50h12M28 54h8M30 58h4" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
 </svg>

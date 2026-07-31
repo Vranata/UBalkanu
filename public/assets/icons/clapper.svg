@@ -1,10 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128" fill="none">
-  <defs>
-    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f4e1b8" />
-      <stop offset="100%" stop-color="#c6953e" />
-    </linearGradient>
-  </defs>
-  <rect x="8" y="22" width="48" height="28" rx="4" fill="rgba(255,255,255,0.02)" stroke="url(#g6)" stroke-width="2" />
-  <path d="M8 22l12-8 12 8 12-8" fill="url(#g6)" opacity="0.98" />
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect x="14" y="6" width="36" height="52" rx="4" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="22" y1="6" x2="22" y2="58" stroke="#bfa15f" stroke-width="2"/>
+  <line x1="42" y1="6" x2="42" y2="58" stroke="#bfa15f" stroke-width="2"/>
+  <path d="M16 12h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2" fill="#bfa15f"/>
+  <path d="M46 12h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2zm0 10h2v2h-2" fill="#bfa15f"/>
+  <polygon points="29 24 39 32 29 40 29 24" fill="#bfa15f"/>
 </svg>

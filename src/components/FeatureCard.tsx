@@ -1,5 +1,11 @@
 import { motion } from 'framer-motion';
 import type { Feature, Locale } from '../content';
+import micIcon from '../assets/icons/mic.svg';
+import flagIcon from '../assets/icons/flag.svg';
+import targetIcon from '../assets/icons/target.svg';
+import compassIcon from '../assets/icons/compass.svg';
+import sparkIcon from '../assets/icons/spark.svg';
+import clapperIcon from '../assets/icons/clapper.svg';
 
 type Props = {
   card: Feature;
@@ -7,7 +13,18 @@ type Props = {
   index?: number;
 };
 
+const iconMap: Record<string, string> = {
+  mic: micIcon,
+  flag: flagIcon,
+  target: targetIcon,
+  compass: compassIcon,
+  spark: sparkIcon,
+  clapper: clapperIcon,
+};
+
 export default function FeatureCard({ card, locale, index = 0 }: Props) {
+  const iconSrc = iconMap[card.icon] ?? micIcon;
+
   return (
     <motion.article
       className="feature-card"
@@ -16,7 +33,7 @@ export default function FeatureCard({ card, locale, index = 0 }: Props) {
       transition={{ delay: index * 0.08, duration: 0.45 }}
     >
       <div className="feature-icon" aria-hidden="true">
-        <img src={`/assets/icons/${card.icon}.svg`} alt="" width={44} height={44} />
+        <img src={iconSrc} alt="" width={54} height={54} />
       </div>
       <h3>{card.copy[locale].title}</h3>
       <p>{card.copy[locale].description}</p>

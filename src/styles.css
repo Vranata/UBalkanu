@@ -321,6 +321,10 @@ button {
   transition: transform 160ms ease, border-color 160ms ease;
 }
 
+.feature-card:hover {
+  border-color: rgba(191, 161, 95, 0.42);
+}
+
 .feature-card h3 {
   margin: 0.5rem 0 0.6rem;
   font-family: 'Noto Serif', Georgia, 'Times New Roman', serif;
@@ -341,22 +345,30 @@ button {
 }
 
 .feature-icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 0.9rem;
   display: inline-grid;
   place-items: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: 0.6rem;
-  background: linear-gradient(180deg, rgba(127, 143, 57, 0.06), rgba(127, 143, 57, 0.02));
-  border: 1px solid rgba(159, 175, 87, 0.12);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(180deg, rgba(191, 161, 95, 0.1), rgba(127, 143, 57, 0.06));
+  border: 1px solid rgba(191, 161, 95, 0.3);
+  box-shadow:
+    inset 0 0 0 1px rgba(191, 161, 95, 0.08),
+    0 8px 18px rgba(0, 0, 0, 0.34),
+    0 0 18px rgba(191, 161, 95, 0.16);
 }
 
 .feature-icon img {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 54px;
+  height: 54px;
+  filter: drop-shadow(0 0 8px rgba(191, 161, 95, 0.38));
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.feature-card:hover .feature-icon img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 12px rgba(191, 161, 95, 0.5));
 }
 
 .details-panel {
