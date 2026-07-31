@@ -14,9 +14,9 @@ function App() {
   return (
     <div className="page-shell">
       <header className="topbar">
-        <a className="brand" href="#home" aria-label="У Балканъ home">
-          <span className="brand-mark">У</span>
-          <span className="brand-name">У Балканъ</span>
+        <a className="brand" href="#home" aria-label="У БАЛКАНЪ home">
+          <img className="brand-mark" src="/assets/logo.svg" alt="У Балканъ logo" />
+          <span className="brand-name">У БАЛКАНЪ</span>
         </a>
 
         <nav className="nav" aria-label="Primary">
