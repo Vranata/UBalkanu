@@ -78,12 +78,12 @@ button {
 .side-pattern {
   position: absolute;
   top: 0;
-  width: clamp(11rem, 14vw, 18rem);
+  width: clamp(4.75rem, 5.6vw, 6.75rem);
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 1;
-  filter: saturate(1.05) brightness(1.04) contrast(1.08);
+  opacity: 0.96;
+  filter: saturate(1.02) brightness(1.02) contrast(1.05);
 }
 
 .side-pattern-left {
@@ -115,21 +115,14 @@ button {
   margin-top: 0;
   padding: clamp(1rem, 2.2vw, 1.5rem) clamp(1rem, 2vw, 1.6rem) 1rem;
   background:
-    linear-gradient(90deg, rgba(10, 7, 5, 0.42) 0%, rgba(17, 13, 10, 0.24) 44%, rgba(10, 7, 5, 0.08) 100%),
-    radial-gradient(circle at top right, rgba(216, 183, 123, 0.12), transparent 42%),
-    url('/assets/hero.jpg') center top / cover no-repeat;
+    linear-gradient(90deg, rgba(10, 7, 5, 0.34) 0%, rgba(17, 13, 10, 0.18) 44%, rgba(10, 7, 5, 0.06) 100%),
+    radial-gradient(circle at top right, rgba(216, 183, 123, 0.1), transparent 42%),
+    url('/assets/hero-full.jpg') center top / cover no-repeat;
   box-shadow: var(--shadow);
 }
 
 .home-stage::before {
-  content: '';
-  position: absolute;
-  inset: 54% 0 0;
-  background: url('/images/hero-bottom.jpg') center top / cover no-repeat;
-  opacity: 0.98;
-  filter: saturate(1.02) brightness(1.01);
-  pointer-events: none;
-  z-index: 0;
+  content: none;
 }
 
 .home-stage::after {
@@ -364,7 +357,7 @@ button {
   padding: 1.3rem;
   border: 1px solid rgba(214, 186, 141, 0.2);
   border-radius: 0.18rem;
-  background: rgba(17, 13, 10, 0.34);
+  background: rgba(17, 13, 10, 0.42);
   backdrop-filter: blur(14px);
   box-shadow:
     inset 1px 0 0 rgba(0, 0, 0, 0.3),
@@ -405,15 +398,16 @@ button {
 
 .feature-card {
   display: grid;
-  grid-template-rows: 4rem 3.6rem minmax(8.2rem, 1fr) auto;
+  grid-template-rows: 4rem minmax(4.8rem, auto) minmax(7rem, 1fr) auto;
   align-items: start;
   justify-items: center;
   row-gap: 0.25rem;
   min-height: 16rem;
   padding: 1.3rem;
-  border: 1px solid rgba(214, 186, 141, 0.12);
+  border: 1px solid rgba(214, 186, 141, 0.16);
   border-radius: 0.14rem;
-  background: linear-gradient(180deg, rgba(35, 27, 22, 0.28), rgba(19, 14, 11, 0.22));
+  background: linear-gradient(180deg, rgba(35, 27, 22, 0.72), rgba(19, 14, 11, 0.64));
+  backdrop-filter: blur(5px);
   box-shadow:
     inset 1px 0 0 rgba(0, 0, 0, 0.1),
     inset 0 -1px 0 rgba(255, 255, 255, 0.012),
@@ -430,7 +424,7 @@ button {
   margin: 0.1rem auto 0;
   padding: 0.85rem 1.4rem;
   border: 1px solid rgba(159, 175, 87, 0.26);
-  background: linear-gradient(180deg, rgba(58, 74, 28, 0.3), rgba(38, 51, 17, 0.42));
+  background: linear-gradient(180deg, rgba(58, 74, 28, 0.38), rgba(38, 51, 17, 0.48));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -458,22 +452,31 @@ button {
 
 .feature-card h3 {
   margin: 0.55rem 0 0;
-  min-height: 3.1rem;
+  min-height: 4.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  justify-self: stretch;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   font-family: var(--font-title);
-  font-size: 1.12rem;
-  line-height: 1.22;
+  font-size: 1.03rem;
+  line-height: 1.1;
   text-align: center;
+  white-space: pre-line;
   text-wrap: balance;
 }
 
 .feature-card p {
-  margin: 0.15rem 0 0;
+  margin: 0.1rem 0 0;
+  justify-self: stretch;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: 6.2rem;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.45;
   font-family: var(--font-body);
   font-size: 0.92rem;
   text-align: center;
@@ -554,7 +557,7 @@ button {
 
 @media (max-width: 1200px) {
   .side-pattern {
-    width: clamp(8rem, 12vw, 11rem);
+    width: clamp(4rem, 5vw, 5.75rem);
   }
 
   .feature-grid {

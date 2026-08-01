@@ -123,11 +123,11 @@ export const featureCards: Feature[] = [
     bg: 'История за корените, които ни изграждат.',
     copy: {
       bg: {
-        title: 'КЪСОМЕТРАЖЕН ФИЛМ',
+        title: 'КЪСОМЕТРАЖЕН\nФИЛМ',
         description: 'История за корените, които ни изграждат.',
       },
       en: {
-        title: 'Short Film',
+        title: 'Short\nFilm',
         description: 'A story about the roots that shape us.',
       },
     },
