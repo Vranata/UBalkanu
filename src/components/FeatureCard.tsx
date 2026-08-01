@@ -37,7 +37,7 @@ export default function FeatureCard({ card, locale, index = 0 }: Props) {
       </div>
       <h3>{card.copy[locale].title}</h3>
       <p>{card.copy[locale].description}</p>
-      <span className="card-link">{locale === 'bg' ? 'Отвори' : 'Open'}</span>
+      <span className="card-link" aria-hidden="true">→</span>
     </motion.article>
   );
 }
