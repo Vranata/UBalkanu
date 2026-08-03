@@ -17,8 +17,8 @@ export const navigation = [
   { id: 'podcast', copy: { bg: 'Подкаст', en: 'Podcast' } },
   { id: 'mission', copy: { bg: 'Мисията', en: 'Mission' } },
   { id: 'goals', copy: { bg: 'Целите', en: 'Goals' } },
-  { id: 'guide', copy: { bg: 'Пътеводител', en: 'Guide' } },
-  { id: 'facts', copy: { bg: 'Знаете ли, че...', en: 'Did You Know' } },
+  { id: 'guide', copy: { bg: 'Пътеводител на културния стопаджия', en: 'Cultural Guide' } },
+  { id: 'facts', copy: { bg: 'Знаехте ли, че...', en: 'Did You Know' } },
   { id: 'film', copy: { bg: 'Късометражен филм', en: 'Short Film' } },
 ] as const;
 
@@ -93,11 +93,11 @@ export const featureCards: Feature[] = [
     bg: 'Откриваме забележителни места, хора и истории из България и Балканите.',
     copy: {
       bg: {
-        title: 'ПЪТЕВОДИТЕЛ',
+        title: 'ПЪТЕВОДИТЕЛ НА КУЛТУРНИЯТ СТОПАДЖИЯ',
         description: 'Откриваме забележителни места, хора и истории из България и Балканите.',
       },
       en: {
-        title: 'Guide',
+        title: 'Cultural Guide',
         description: 'We uncover remarkable places, people and stories across Bulgaria and the Balkans.',
       },
     },
@@ -108,11 +108,11 @@ export const featureCards: Feature[] = [
     bg: 'Любопитни факти за нашата история, традиции и наследство.',
     copy: {
       bg: {
-        title: 'ЗНАЕТЕ ЛИ, ЧЕ...',
+        title: 'ЗНАЕТХЕ ЛИ, ЧЕ...',
         description: 'Любопитни факти за нашата история, традиции и наследство.',
       },
       en: {
-        title: 'Did You Know',
+        title: 'Did You Know That...',
         description: 'Curious facts about our history, traditions and heritage.',
       },
     },
