@@ -115,6 +115,17 @@ export const quoteCopy: Record<Locale, string> = {
   en: 'A nation that does not honor its traditions is doomed to be forgotten.',
 };
 
+export const heroQuoteCopy: Record<Locale, { quote: string; author: string }> = {
+  bg: {
+    quote: 'Миналото\nне е зад нас.\nТо е вътре в нас.',
+    author: '— У Балканъ',
+  },
+  en: {
+    quote: 'The past\nis not behind us.\nIt is inside us.',
+    author: '— U Balkana',
+  },
+};
+
 export const sectionDetails: SectionDetail[] = [
   {
     id: 'podcast',
