@@ -31,11 +31,10 @@ export default function Hero({ locale }: Props) {
         className="hero-quote"
         initial={{ opacity: 0, x: 24 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.9, ease: 'easeOut', delay: 0.3 }}
       >
-        <p className="quote-mark">“</p>
         <p>{quoteCopy[locale]}</p>
-        <span>— У БалканЪ</span>
+        <span>У БалканЪ</span>
       </motion.aside>
     </section>
   );

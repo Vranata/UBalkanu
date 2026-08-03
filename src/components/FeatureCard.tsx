@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Feature, Locale } from '../content';
 import micIcon from '../assets/icons/mic.svg';
@@ -37,7 +38,7 @@ export default function FeatureCard({ card, locale, index = 0 }: Props) {
       </div>
       <h3>{card.copy[locale].title}</h3>
       <p>{card.copy[locale].description}</p>
-      <span className="card-link" aria-hidden="true">→</span>
+      <Link className="card-link" to={`/${card.id}`} aria-label={card.copy[locale].title}>→</Link>
     </motion.article>
   );
 }
