@@ -53,7 +53,7 @@ export default function FilmPage({ locale }: Props) {
         <div className="video-placeholder">
           <div className="play-icon-large"><ClapperSvg /></div>
           <span className="video-label">
-            {locale === 'bg' ? 'Официален Трейлър — Очаквайте Скоро' : 'Official Trailer — Coming Soon'}
+            {locale === 'bg' ? 'Очаквайте Скоро' : 'Coming Soon'}
           </span>
           <p className="video-status">
             {locale === 'bg' ? 'В процес на постпродукция • Премиера 2027' : 'In Post-Production • Premiere 2027'}

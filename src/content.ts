@@ -30,7 +30,7 @@ export const navigation = [
   { id: 'home', copy: { bg: 'Начало', en: 'Home' } },
   { id: 'podcast', copy: { bg: 'Подкаст', en: 'Podcast' } },
   { id: 'mission', copy: { bg: 'Мисията', en: 'Mission' } },
-  { id: 'goals', copy: { bg: 'Целите', en: 'Goals' } },
+  { id: 'goals', copy: { bg: 'За УбалканЪ', en: 'За U Balkana' } },
   { id: 'guide', copy: { bg: 'Пътеводител на културния стопаджия', en: 'Cultural Guide' } },
   { id: 'facts', copy: { bg: 'Знаехте ли, че...', en: 'Did You Know' } },
   { id: 'film', copy: { bg: 'Късометражен филм', en: 'Short Film' } },
