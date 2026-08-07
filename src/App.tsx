@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import { BrowserRouter, Routes, Route, NavLink, Link, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import { navigation, quoteCopy, type Locale } from './content';
 import SidePatterns from './components/SidePatterns';
 
@@ -147,6 +148,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <AppContent />
+      <Analytics />
     </BrowserRouter>
   );
 }
