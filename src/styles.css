@@ -806,20 +806,20 @@ button {
 }
 
 .podcast-player-hero {
-  padding: 2rem;
+  padding: 1.5rem 1.75rem;
   border-radius: 0.25rem;
   background: linear-gradient(135deg, rgba(38, 30, 23, 0.85), rgba(18, 14, 11, 0.95));
   border: 1px solid rgba(216, 183, 123, 0.28);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
 .player-hero-content {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 1.75rem;
-  align-items: center;
-  margin-top: 1rem;
+  align-items: start;
+  margin-top: 0.75rem;
 }
 
 .player-hero-thumb {
@@ -863,11 +863,39 @@ button {
   transform: scale(1.1);
 }
 
+.player-badge {
+  color: var(--warm);
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.player-hero-info h3 {
+  font-family: var(--font-title);
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+.player-controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(214, 186, 141, 0.12);
+}
+
 .ep-hero-tags {
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .ep-cat-pill {

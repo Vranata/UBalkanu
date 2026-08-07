@@ -69,8 +69,17 @@ type Episode = {
   duration: string;
   date: string;
   thumbnail: string;
+  youtubeId?: string;
   youtubeUrl: string;
   description: Record<Locale, string>;
+};
+
+// Helper function to resolve thumbnail URL
+const getThumbnailUrl = (ep: Episode) => {
+  if (ep.youtubeId) {
+    return `https://img.youtube.com/vi/${ep.youtubeId}/hqdefault.jpg`;
+  }
+  return ep.thumbnail;
 };
 
 const episodes: Episode[] = [
@@ -177,14 +186,20 @@ export default function PodcastPage({ locale }: Props) {
           <MicSvg /> {locale === 'bg' ? 'Избран епизод' : 'Selected Episode'}
         </div>
         <div className="player-hero-content">
-          <div className="player-hero-thumb">
-            <img src={featuredEp.thumbnail} alt={featuredEp.title[locale]} />
+          <a
+            href={featuredEp.youtubeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="player-hero-thumb"
+            title={locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'}
+          >
+            <img src={getThumbnailUrl(featuredEp)} alt={featuredEp.title[locale]} />
             <div className="player-thumb-overlay">
               <div className="play-icon-circle">
                 <PlaySvg />
               </div>
             </div>
-          </div>
+          </a>
           <div className="player-hero-info">
             <div className="ep-hero-tags">
               <span className="ep-num">{featuredEp.number}</span>
@@ -203,11 +218,6 @@ export default function PodcastPage({ locale }: Props) {
               >
                 ▶ {locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'} ({featuredEp.duration})
               </a>
-              <div className="platform-links">
-                <span className="platform-tag">Spotify</span>
-                <span className="platform-tag">Apple Podcasts</span>
-                <span className="platform-tag">YouTube</span>
-              </div>
             </div>
           </div>
         </div>
@@ -282,9 +292,16 @@ export default function PodcastPage({ locale }: Props) {
                   className={`episode-card ${activeEpisode === ep.id ? 'active' : ''}`}
                   onClick={() => setActiveEpisode(ep.id)}
                 >
-                  {/* Thumbnail in the top center */}
-                  <div className="ep-thumb-container">
-                    <img src={ep.thumbnail} alt={ep.title[locale]} className="ep-thumb" />
+                  {/* Thumbnail in the top center - clicks directly to YouTube */}
+                  <a
+                    href={ep.youtubeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ep-thumb-container"
+                    onClick={(e) => e.stopPropagation()}
+                    title={locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'}
+                  >
+                    <img src={getThumbnailUrl(ep)} alt={ep.title[locale]} className="ep-thumb" />
                     <div className="ep-thumb-overlay">
                       <span className="ep-cat-pill-overlay">{ep.categoryName[locale]}</span>
                       <div className="ep-play-icon">
@@ -294,7 +311,7 @@ export default function PodcastPage({ locale }: Props) {
                         <TimerSvg /> {ep.duration}
                       </span>
                     </div>
-                  </div>
+                  </a>
 
                   {/* Card Content */}
                   <div className="ep-card-body">

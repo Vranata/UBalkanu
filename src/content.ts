@@ -136,7 +136,7 @@ export const sectionDetails: SectionDetail[] = [
         items: [
           { label: 'За какво говорим', body: 'Разговаряме с творци, историци, пътешественици и хора с необикновени истории. Темите включват традиции, езици, занаяти, местни легенди и съвременната идентичност на балканците.' },
           { label: 'Формат', body: 'Всеки епизод е разговор в дълбочина — около 45–60 минути — с конкретен гост или тема. Издаваме нов епизод всяка втора седмица.' },
-          { label: 'Как да слушаш', body: 'Подкастът е достъпен в Spotify, Apple Podcasts, YouTube и на нашия сайт. Абонирай се, за да не пропускаш нито един епизод.' },
+          { label: 'Как да слушаш', body: 'Подкастът е достъпен в нашия YouTube канал и на нашия сайт. Абонирай се, за да не пропускаш нито един епизод.' },
         ],
       },
       en: {
@@ -145,7 +145,7 @@ export const sectionDetails: SectionDetail[] = [
         items: [
           { label: 'What we talk about', body: 'We speak with creatives, historians, travellers and people with extraordinary stories. Topics cover traditions, languages, crafts, local legends and the modern Balkan identity.' },
           { label: 'Format', body: 'Each episode is an in-depth conversation — around 45–60 minutes — with a specific guest or theme. We release a new episode every two weeks.' },
-          { label: 'How to listen', body: 'The podcast is available on Spotify, Apple Podcasts, YouTube and our website. Subscribe so you never miss an episode.' },
+          { label: 'How to listen', body: 'The podcast is available on our YouTube channel and our website. Subscribe so you never miss an episode.' },
         ],
       },
     },
