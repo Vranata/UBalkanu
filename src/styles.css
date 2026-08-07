@@ -1,33 +1,11 @@
-@font-face {
-  font-family: 'BUKi';
-  src: url('/assets/BUKI-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'BUKI';
-  src: url('/assets/BUKI-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Neucha';
-  src: url('/assets/Neucha-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   color-scheme: dark;
   --hero-image: url('/assets/hero.jpg');
-  --font-title: 'BUKi', 'BUKI', serif;
-  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-accent: 'Neucha', 'Comfortaa', cursive;
+  --font-title: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-accent: 'Montserrat', sans-serif;
   --bg: #140f0c;
   --bg-soft: #1b1410;
   --panel: rgba(31, 24, 19, 0.86);
@@ -41,6 +19,7 @@
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.42);
   --radius: 0.35rem;
   font-family: var(--font-body);
+  letter-spacing: -0.01em;
 }
 
 * {
@@ -267,7 +246,7 @@ button {
 
 .brand-name {
   font-family: var(--font-title);
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   font-size: 1.06rem;
   color: var(--warm);
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.35);
@@ -397,10 +376,11 @@ button {
 .hero h1 {
   margin: 0;
   font-family: var(--font-title);
-  font-size: clamp(3rem, 8vw, 6.6rem);
+  font-size: clamp(2.4rem, 6.5vw, 5.5rem);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .hero h2 {
@@ -637,7 +617,7 @@ button {
 .bottom-quote p {
   margin: 0;
   font-family: var(--font-title);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.06em;
   color: #ebdcc2;
   font-size: clamp(0.95rem, 1.6vw, 1.4rem);
   font-weight: 600;
@@ -802,7 +782,7 @@ button {
   color: var(--accent-soft);
   font-family: var(--font-title);
   font-size: 0.8rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
 }
@@ -1084,7 +1064,7 @@ button {
 .coming-soon-ornament {
   color: rgba(216, 183, 123, 0.55);
   font-size: 0.8rem;
-  letter-spacing: 0.7em;
+  letter-spacing: 0.3em;
   text-shadow: 0 0 8px rgba(216, 183, 123, 0.3);
 }
 
@@ -1137,7 +1117,7 @@ button {
   font-size: 0.82rem;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
 }
 
 /* Section structure */
@@ -1148,7 +1128,7 @@ button {
 .ubalkana-section-heading {
   font-family: var(--font-title);
   font-size: clamp(1rem, 2vw, 1.35rem);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.08em;
   color: var(--accent-soft);
   margin: 0 0 1.5rem;
   text-transform: uppercase;
@@ -1442,7 +1422,7 @@ button {
   color: var(--accent-soft);
   font-family: var(--font-title);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   margin-bottom: 0.5rem;
 }
 
