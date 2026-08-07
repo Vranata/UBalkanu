@@ -159,8 +159,9 @@ button {
 }
 
 .topbar {
-  position: relative;
-  z-index: 20;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 100;
   width: 100%;
   margin: 0;
   display: flex;
@@ -170,13 +171,25 @@ button {
   padding: 0.9rem 1.1rem;
   border: 1px solid rgba(214, 186, 141, 0.18);
   border-radius: 0.18rem;
-  background: rgba(14, 10, 8, 0.78);
+  background: rgba(14, 10, 8, 0.88);
   backdrop-filter: blur(18px);
   box-shadow:
     inset 1px 0 0 rgba(0, 0, 0, 0.32),
     inset 0 -1px 0 rgba(255, 255, 255, 0.03),
     1px 1px 0 rgba(255, 255, 255, 0.02),
     var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.topbar.header-pinned {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.topbar.header-hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .brand {
@@ -250,7 +263,7 @@ button {
 .social-icons {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.85rem;
   min-width: max-content;
 }
 
@@ -258,20 +271,34 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(214, 186, 141, 0.15);
   color: var(--muted);
-  transition: color 160ms ease, transform 160ms ease;
+  transition: all 200ms ease;
 }
 
 .social-icons a:hover {
   color: var(--warm);
-  transform: translateY(-1px);
+  background: rgba(216, 183, 123, 0.15);
+  border-color: var(--accent-gold, #d8b77b);
+  transform: translateY(-2px);
 }
 
 .social-icons svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 1rem 2.5rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(214, 186, 141, 0.1);
 }
 
 .hero {
@@ -1623,9 +1650,5 @@ button {
 
   .bottom-quote p {
     font-size: 0.82rem;
-  }
-
-  .social-icons {
-    display: none;
   }
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, NavLink, Link, Navigate } from 'react-router-dom';
 import { navigation, quoteCopy, type Locale } from './content';
 import SidePatterns from './components/SidePatterns';
@@ -13,6 +13,25 @@ import FilmPage from './pages/FilmPage';
 
 function AppContent() {
   const [locale, setLocale] = useState<Locale>('bg');
+  const [headerVisible, setHeaderVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // Reveal header if scrolling up or near the top
+      if (currentScrollY <= 60 || currentScrollY < lastScrollY) {
+        setHeaderVisible(true);
+      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setHeaderVisible(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const activeNavigation = useMemo(
     () =>
@@ -28,7 +47,7 @@ function AppContent() {
     <div className="app-shell">
       <SidePatterns />
       <div className="page-shell">
-        <header className="topbar">
+        <header className={`topbar ${headerVisible ? 'header-pinned' : 'header-hidden'}`}>
           <Link className="brand" to="/" aria-label="У БАЛКАНЪ home">
             <img className="brand-mark" src="/assets/balkana-logo.png" alt="У Балканъ logo" />
             <span className="brand-name">У БАЛКАНЪ</span>
@@ -63,7 +82,28 @@ function AppContent() {
               EN
             </button>
           </div>
+        </header>
 
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage locale={locale} />} />
+            <Route path="/podcast" element={<PodcastPage locale={locale} />} />
+            <Route path="/mission" element={<MissionPage locale={locale} />} />
+            <Route path="/goals" element={<GoalsPage locale={locale} />} />
+            <Route path="/guide" element={<GuidePage locale={locale} />} />
+            <Route path="/facts" element={<FactsPage locale={locale} />} />
+            <Route path="/film" element={<FilmPage locale={locale} />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </main>
+
+        <section className="bottom-quote" aria-label="Featured quote">
+          <span className="bottom-quote-mark">“</span>
+          <p>{quoteCopy[locale]}</p>
+          <span className="bottom-quote-mark">”</span>
+        </section>
+
+        <footer className="site-footer">
           <div className="social-icons" aria-label="Social media">
             <a href="https://www.instagram.com/ubalkanapodcast.bg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
@@ -89,26 +129,7 @@ function AppContent() {
               </svg>
             </a>
           </div>
-        </header>
-
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<HomePage locale={locale} />} />
-            <Route path="/podcast" element={<PodcastPage locale={locale} />} />
-            <Route path="/mission" element={<MissionPage locale={locale} />} />
-            <Route path="/goals" element={<GoalsPage locale={locale} />} />
-            <Route path="/guide" element={<GuidePage locale={locale} />} />
-            <Route path="/facts" element={<FactsPage locale={locale} />} />
-            <Route path="/film" element={<FilmPage locale={locale} />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
-
-        <section className="bottom-quote" aria-label="Featured quote">
-          <span className="bottom-quote-mark">“</span>
-          <p>{quoteCopy[locale]}</p>
-          <span className="bottom-quote-mark">”</span>
-        </section>
+        </footer>
       </div>
     </div>
   );
