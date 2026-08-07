@@ -7,6 +7,7 @@ import targetIcon from '../assets/icons/target.svg';
 import compassIcon from '../assets/icons/compass.svg';
 import sparkIcon from '../assets/icons/spark.svg';
 import clapperIcon from '../assets/icons/clapper.svg';
+import infoIcon from '../assets/icons/info.svg';
 
 type Props = {
   card: Feature;
@@ -21,6 +22,7 @@ const iconMap: Record<string, string> = {
   compass: compassIcon,
   spark: sparkIcon,
   clapper: clapperIcon,
+  info: infoIcon,
 };
 
 export default function FeatureCard({ card, locale, index = 0 }: Props) {

@@ -74,11 +74,11 @@ export const featureCards: Feature[] = [
   },
   {
     id: 'goals',
-    icon: 'target',
-    bg: 'Конкретни стъпки към културно пробуждане на новото поколение.',
+    icon: 'info',
+    bg: 'Открийте кои сме ние и какво ни движи.',
     copy: {
-      bg: { title: 'ЦЕЛИТЕ', description: 'Конкретни стъпки към културно пробуждане на новото поколение.' },
-      en: { title: 'Goals', description: 'Concrete steps toward cultural awakening for a new generation.' },
+      bg: { title: 'ЗА УБАЛКАНЪ', description: 'Открийте кои сме ние и какво ни движи.' },
+      en: { title: 'За U Balkana', description: 'Discover who we are and what drives us.' },
     },
   },
   {
