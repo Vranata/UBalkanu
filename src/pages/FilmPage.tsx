@@ -1,6 +1,31 @@
 import { motion } from 'framer-motion';
 import type { Locale } from '../content';
 
+// Inline SVG icons matching hero card style
+const ClapperSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="56" height="56">
+    <rect x="8" y="20" width="48" height="36" rx="2" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M8 28h48" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M8 20L20 8M24 20L36 8M40 20L52 8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26 38l12 6-12 6V38z" fill="#bfa15f" fillOpacity="0.25" stroke="#bfa15f" strokeWidth="2" strokeLinejoin="round" />
+  </svg>
+);
+
+const ScrollSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="24" height="24">
+    <path d="M14 10h36a4 4 0 0 1 0 8H14a4 4 0 0 0 0 8h36a4 4 0 0 1 0 8H14a4 4 0 0 0 0 8h36" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M20 26h24M20 34h18" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
+  </svg>
+);
+
+const FilmSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="24" height="24">
+    <rect x="6" y="12" width="52" height="40" rx="2" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M6 20h8M6 32h8M6 44h8M50 20h8M50 32h8M50 44h8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M24 24l16 8-16 8V24z" fill="#bfa15f" fillOpacity="0.2" stroke="#bfa15f" strokeWidth="2" strokeLinejoin="round" />
+  </svg>
+);
+
 type Props = {
   locale: Locale;
 };
@@ -26,33 +51,32 @@ export default function FilmPage({ locale }: Props) {
 
       <div className="film-video-stage">
         <div className="video-placeholder">
-          <div className="play-icon-large">🎬</div>
+          <div className="play-icon-large"><ClapperSvg /></div>
           <span className="video-label">
             {locale === 'bg' ? 'Официален Трейлър — Очаквайте Скоро' : 'Official Trailer — Coming Soon'}
           </span>
           <p className="video-status">
-            {locale === 'bg' ? 'В процес на постпродукция • Премиера 2026' : 'In Post-Production • Premiere 2026'}
+            {locale === 'bg' ? 'В процес на постпродукция • Премиера 2027' : 'In Post-Production • Premiere 2027'}
           </p>
         </div>
       </div>
 
       <div className="film-details-grid">
         <div className="film-info-card">
-          <h3>📜 {locale === 'bg' ? 'Синопсис' : 'Synopsis'}</h3>
+          <h3><ScrollSvg /> {locale === 'bg' ? 'Синопсис' : 'Synopsis'}</h3>
           <p>
             {locale === 'bg'
-              ? 'Филмът проследява пътуването на млад човек из тайнствените кътчета на Балканите в търсене на истинския си произход. През срещи със стари занаятчии, овчари и пазители на обреди, той открива, че корените не са просто минало, а живо вдъхновение.'
-              : 'The film follows a young person’s journey through mysterious corners of the Balkans in search of their true origin. Through encounters with master artisans, shepherds, and keepers of sacred rituals, they discover that roots are not just history, but a living inspiration.'}
+              ? 'Филмът показва как българската кутлтура е орисана да оцелее чрез неизбежната среща на миналото и бъдещето.'
+              : 'The film shows how Bulgarian culture is destined to survive through the inevitable encounter of past and future.'}
           </p>
         </div>
 
         <div className="film-info-card">
-          <h3>🎥 {locale === 'bg' ? 'За продукцията' : 'About Production'}</h3>
+          <h3><FilmSvg /> {locale === 'bg' ? 'За продукцията' : 'About Production'}</h3>
           <ul>
-            <li><strong>{locale === 'bg' ? 'Жанр:' : 'Genre:'}</strong> {locale === 'bg' ? 'Документален / Поетичен' : 'Documentary / Poetic'}</li>
-            <li><strong>{locale === 'bg' ? 'Локации:' : 'Locations:'}</strong> Родопи, Стара планина, Пирин</li>
-            <li><strong>{locale === 'bg' ? 'Музика:' : 'Soundtrack:'}</strong> {locale === 'bg' ? 'Записана на живо с фолклорни инструменти' : 'Live acoustic folk instruments'}</li>
-            <li><strong>{locale === 'bg' ? 'Статус:' : 'Status:'}</strong> {locale === 'bg' ? 'Монтаж & Цветови корекции' : 'Editing & Color Grading'}</li>
+            <li><strong>{locale === 'bg' ? 'Жанр:' : 'Genre:'}</strong> {locale === 'bg' ? 'Игрален' : 'Feature film'}</li>
+            <li><strong>{locale === 'bg' ? 'Локации:' : 'Locations:'}</strong>Стара планина</li>
+            <li><strong>{locale === 'bg' ? 'Музика:' : 'Soundtrack:'}</strong> {locale === 'bg' ? 'Класическа и българска народна музика' : 'Classical and Bulgarian folk music'}</li>
           </ul>
         </div>
       </div>

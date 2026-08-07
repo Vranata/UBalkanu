@@ -191,7 +191,8 @@ button {
   width: 2.8rem;
   height: 2.8rem;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 
 .brand-name {
@@ -305,7 +306,8 @@ button {
   display: block;
   width: min(12rem, 36vw);
   margin: 0 0 1rem;
-  filter: brightness(0) invert(1) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  filter: invert(1) drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  mix-blend-mode: screen;
 }
 
 .hero-logo,
@@ -692,6 +694,9 @@ button {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .podcast-player-hero h3 {
@@ -808,6 +813,9 @@ button {
   font-size: 0.92rem;
   margin: 0 0 0.75rem;
   font-family: var(--font-body);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .ep-text {
@@ -868,8 +876,17 @@ button {
 }
 
 .pillar-icon {
-  font-size: 2.2rem;
-  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px rgba(191, 161, 95, 0.32));
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  filter: drop-shadow(0 0 14px rgba(191, 161, 95, 0.52));
+  transform: scale(1.06);
 }
 
 .pillar-card h3 {
@@ -969,6 +986,9 @@ button {
   font-family: var(--font-title);
   color: var(--warm);
   margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
 .hitchhiker-rules-card ul {
@@ -1014,6 +1034,9 @@ button {
 
 .spot-region {
   color: var(--accent-soft);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .spot-tag {
@@ -1128,8 +1151,11 @@ button {
 }
 
 .play-icon-large {
-  font-size: 3.5rem;
-  filter: drop-shadow(0 0 12px rgba(216, 183, 123, 0.4));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 16px rgba(191, 161, 95, 0.5));
+  margin-bottom: 0.5rem;
 }
 
 .video-label {
@@ -1164,6 +1190,9 @@ button {
   color: var(--warm);
   font-size: 1.25rem;
   margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
 }
 
 .film-info-card p {

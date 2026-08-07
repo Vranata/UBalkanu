@@ -2,6 +2,30 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Locale } from '../content';
 
+// Inline SVG icons matching hero card style
+const MicSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="28" height="28">
+    <rect x="24" y="8" width="16" height="24" rx="8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M16 22a16 16 0 0 0 32 0" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M32 38v10M24 48h16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const TimerSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="18" height="18">
+    <circle cx="32" cy="36" r="20" stroke="#bfa15f" strokeWidth="2"/>
+    <path d="M32 24v14l8 5" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M26 8h12M32 8v8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const PersonSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="18" height="18">
+    <circle cx="32" cy="20" r="10" stroke="#bfa15f" strokeWidth="2"/>
+    <path d="M10 56c0-12 9-20 22-20s22 8 22 20" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
 type Props = {
   locale: Locale;
 };
@@ -67,7 +91,7 @@ export default function PodcastPage({ locale }: Props) {
       </header>
 
       <div className="podcast-player-hero">
-        <div className="player-badge">🎙 {locale === 'bg' ? 'Последен епизод' : 'Latest Episode'}</div>
+        <div className="player-badge"><MicSvg /> {locale === 'bg' ? 'Последен епизод' : 'Latest Episode'}</div>
         <h3>{episodes[0].title[locale]}</h3>
         <p className="player-guest">{episodes[0].guest[locale]}</p>
         <p className="player-desc">{episodes[0].description[locale]}</p>
@@ -96,10 +120,10 @@ export default function PodcastPage({ locale }: Props) {
               <div className="ep-meta">
                 <span className="ep-num">{ep.number}</span>
                 <span className="ep-date">{ep.date}</span>
-                <span className="ep-duration">⏱ {ep.duration}</span>
+                <span className="ep-duration"><TimerSvg /> {ep.duration}</span>
               </div>
               <h4>{ep.title[locale]}</h4>
-              <p className="ep-guest">👤 {ep.guest[locale]}</p>
+              <p className="ep-guest"><PersonSvg /> {ep.guest[locale]}</p>
               <p className="ep-text">{ep.description[locale]}</p>
               <button className="ep-play-btn">
                 {activeEpisode === ep.id ? (locale === 'bg' ? ' Playing' : ' Playing') : (locale === 'bg' ? '▶ Слушай' : '▶ Listen')}

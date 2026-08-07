@@ -2,6 +2,23 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import type { Locale } from '../content';
 
+// Inline SVG icons matching hero card style
+const CompassSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="28" height="28">
+    <circle cx="32" cy="32" r="24" stroke="#bfa15f" strokeWidth="2"/>
+    <path d="M32 14v4M32 46v4M14 32h4M46 32h4" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" opacity="0.5"/>
+    <path d="M22 22l8 10 10-8-8-10-10 8z" stroke="#bfa15f" strokeWidth="2" strokeLinejoin="round" fill="#bfa15f" fillOpacity="0.12"/>
+    <circle cx="32" cy="32" r="2" fill="#bfa15f"/>
+  </svg>
+);
+
+const PinSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="18" height="18">
+    <path d="M32 6C22 6 14 14 14 24c0 14 18 34 18 34s18-20 18-34C50 14 42 6 32 6z" stroke="#bfa15f" strokeWidth="2" strokeLinejoin="round"/>
+    <circle cx="32" cy="24" r="5" stroke="#bfa15f" strokeWidth="2"/>
+  </svg>
+);
+
 type Props = {
   locale: Locale;
 };
@@ -61,7 +78,7 @@ export default function GuidePage({ locale }: Props) {
       </header>
 
       <section className="hitchhiker-rules-card">
-        <h3>🧭 {locale === 'bg' ? 'Кодекса на Културния Стопаджия' : 'The Hitchhiker\'s Code'}</h3>
+        <h3><CompassSvg /> {locale === 'bg' ? 'Кодекса на Културния Стопаджия' : 'The Hitchhiker\'s Code'}</h3>
         <ul>
           <li>{locale === 'bg' ? '1. Пътувай бавно — слушай повече, отколкото говориш.' : '1. Travel slow — listen more than you speak.'}</li>
           <li>{locale === 'bg' ? '2. Почитай местните хора и техния традиционен поминък.' : '2. Respect the local elders and traditional ways of life.'}</li>
@@ -77,7 +94,7 @@ export default function GuidePage({ locale }: Props) {
             onClick={() => setSelectedSpot(selectedSpot === spot.id ? null : spot.id)}
           >
             <div className="spot-header">
-              <span className="spot-region">📍 {spot.region[locale]}</span>
+              <span className="spot-region"><PinSvg /> {spot.region[locale]}</span>
               <span className="spot-tag">{spot.tag[locale]}</span>
             </div>
             <h4>{spot.title[locale]}</h4>

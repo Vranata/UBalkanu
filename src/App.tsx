@@ -30,7 +30,7 @@ function AppContent() {
       <div className="page-shell">
         <header className="topbar">
           <Link className="brand" to="/" aria-label="У БАЛКАНЪ home">
-            <img className="brand-mark" src="/assets/logo.svg" alt="У Балканъ logo" />
+            <img className="brand-mark" src="/assets/balkana-logo.png" alt="У Балканъ logo" />
             <span className="brand-name">У БАЛКАНЪ</span>
           </Link>
 

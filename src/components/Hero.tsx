@@ -13,7 +13,7 @@ export default function Hero({ locale }: Props) {
   return (
     <section className="hero" id="home">
       <div className="hero-content">
-        <img className="hero-logo" src="/assets/logo.svg" alt="У Балканъ logo" />
+        <img className="hero-logo" src="/assets/balkana-logo.png" alt="У Балканъ logo" />
         <p className="eyebrow">{copy.eyebrow}</p>
         <h1>{copy.title}</h1>
         <h2>{copy.subtitle}</h2>
