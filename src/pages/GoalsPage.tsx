@@ -204,7 +204,7 @@ export default function GoalsPage({ locale }: Props) {
       <section className="manifesto-card">
         <blockquote className="manifesto-text">
           {locale === 'bg'
-            ? '„У Балканъ е място за истории, лични гласове и културни следи от България.Създаваме съдържание, което е красиво, смислено и близко до младите хора."'
+            ? '„У Балканъ е място за истории, лични гласове и културни следи от България.   Създаваме съдържание, което е красиво, смислено и близко до младите хора."'
             : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria. We create content that is beautiful, meaningful and close to young people."'}
         </blockquote>
       </section>
