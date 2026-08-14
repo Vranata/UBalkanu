@@ -82,7 +82,8 @@ const getThumbnailUrl = (ep: Episode) => {
   return ep.thumbnail;
 };
 
-const episodes: Episode[] = [
+/* Archived placeholder episodes - will be un-commented or populated when official episodes are uploaded
+const archivedEpisodes: Episode[] = [
   {
     id: 1,
     number: 'EP. 01',
@@ -132,6 +133,9 @@ const episodes: Episode[] = [
     },
   },
 ];
+*/
+
+const episodes: Episode[] = [];
 
 export default function PodcastPage({ locale }: Props) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -178,63 +182,77 @@ export default function PodcastPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'ПОДКАСТ У БАЛКАНЪ' : 'U BALKANA PODCAST'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? 'Истории на хората, които съхраняват българското.'
-            : 'Stories of the people who are preserving the Bulgarian spirit.'}
+            ? 'Истории на хората които останаха, съхраниха и свързаха българското миналто, настоящето и бъдещето.'
+            : 'Stories of the people who stayed, preserved and connected the Bulgarian past, present and future.'}
         </p>
       </header>
 
       {/* Hero featured player */}
-      <div className="podcast-player-hero">
-        <div className="player-badge">
-          <MicSvg /> {locale === 'bg' ? 'Последен епизод' : 'Latest Episode'}
-        </div>
-        <div className="player-hero-content">
-          <a
-            href={featuredEp.youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="player-hero-thumb"
-            title={locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'}
-          >
-            <img src={getThumbnailUrl(featuredEp)} alt={featuredEp.title[locale]} />
-            <div className="player-thumb-overlay">
-              <div className="play-icon-circle">
-                <PlaySvg />
+      {featuredEp ? (
+        <div className="podcast-player-hero">
+          <div className="player-badge">
+            <MicSvg /> {locale === 'bg' ? 'Последен епизод' : 'Latest Episode'}
+          </div>
+          <div className="player-hero-content">
+            <a
+              href={featuredEp.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="player-hero-thumb"
+              title={locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'}
+            >
+              <img src={getThumbnailUrl(featuredEp)} alt={featuredEp.title[locale]} />
+              <div className="player-thumb-overlay">
+                <div className="play-icon-circle">
+                  <PlaySvg />
+                </div>
               </div>
-            </div>
-          </a>
-          <div className="player-hero-info">
-            <div className="ep-hero-tags">
-              <span className="ep-num">{featuredEp.number}</span>
-              <span className="ep-cat-pill">{featuredEp.categoryName[locale]}</span>
-            </div>
-            <h3>{featuredEp.title[locale]}</h3>
-            <p className="player-guest"><PersonSvg /> {featuredEp.guest[locale]}</p>
-            <p className="player-desc">{featuredEp.description[locale]}</p>
+            </a>
+            <div className="player-hero-info">
+              <div className="ep-hero-tags">
+                <span className="ep-num">{featuredEp.number}</span>
+                <span className="ep-cat-pill">{featuredEp.categoryName[locale]}</span>
+              </div>
+              <h3>{featuredEp.title[locale]}</h3>
+              <p className="player-guest"><PersonSvg /> {featuredEp.guest[locale]}</p>
+              <p className="player-desc">{featuredEp.description[locale]}</p>
 
-            <div className="player-controls-bar">
-              <a
-                href={featuredEp.youtubeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="play-button"
-              >
-                ▶ {locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'} ({featuredEp.duration})
-              </a>
-              <button
-                className={`ep-share-btn ${copiedId === featuredEp.id ? 'copied' : ''}`}
-                onClick={(e) => handleShare(featuredEp.id, e)}
-                title={locale === 'bg' ? 'Сподели епизода' : 'Share episode'}
-              >
-                {copiedId === featuredEp.id ? <CheckSvg /> : <ShareSvg />}
-                <span>{copiedId === featuredEp.id ? (locale === 'bg' ? 'Копирано!' : 'Copied!') : (locale === 'bg' ? 'Сподели' : 'Share')}</span>
-              </button>
+              <div className="player-controls-bar">
+                <a
+                  href={featuredEp.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="play-button"
+                >
+                  ▶ {locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'} ({featuredEp.duration})
+                </a>
+                <button
+                  className={`ep-share-btn ${copiedId === featuredEp.id ? 'copied' : ''}`}
+                  onClick={(e) => handleShare(featuredEp.id, e)}
+                  title={locale === 'bg' ? 'Сподели епизода' : 'Share episode'}
+                >
+                  {copiedId === featuredEp.id ? <CheckSvg /> : <ShareSvg />}
+                  <span>{copiedId === featuredEp.id ? (locale === 'bg' ? 'Копирано!' : 'Copied!') : (locale === 'bg' ? 'Сподели' : 'Share')}</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Episodes Section */}
+      ) : (
+        <div className="podcast-player-hero coming-soon-hero" style={{ textAlign: 'center', padding: '3rem 1.5rem' }}>
+          <div className="player-badge" style={{ margin: '0 auto 1.5rem' }}>
+            <MicSvg /> {locale === 'bg' ? 'Очаквайте Скоро' : 'Coming Soon'}
+          </div>
+          <h2 style={{ fontFamily: 'var(--font-title)', color: '#f3eadf', margin: '0 0 1rem' }}>
+            {locale === 'bg' ? 'Първият епизод предстои да бъде качен!' : 'The first episode will be uploaded soon!'}
+          </h2>
+          <p style={{ color: 'var(--muted)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
+            {locale === 'bg'
+              ? 'Подготвяме първите вдъхновяващи разговори. Всеки нов епизод ще бъде качван тук веднага след неговата премиера.'
+              : 'We are preparing the first inspiring conversations. Every new episode will be listed here right after its release.'}
+          </p>
+        </div>
+      )}
       <section className="episodes-section">
         <div className="episodes-section-header">
           <h2>{locale === 'bg' ? 'Всички епизоди' : 'All Episodes'}</h2>
