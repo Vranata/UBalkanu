@@ -182,7 +182,7 @@ export default function PodcastPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'ПОДКАСТ У БАЛКАНЪ' : 'U BALKANA PODCAST'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? 'Истории на хората които останаха, съхраниха и свързаха българското миналто, настоящето и бъдещето.'
+            ? 'Истории на хората, които останаха, съхраниха и свързаха българското минало, настояще и бъдеще.'
             : 'Stories of the people who stayed, preserved and connected the Bulgarian past, present and future.'}
         </p>
       </header>

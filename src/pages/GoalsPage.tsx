@@ -60,7 +60,7 @@ const contentPillars = [
   },
   {
     icon: FilmIcon,
-    title: { bg: 'Документален филм', en: 'Documentary Film' },
+    title: { bg: 'Късометражен филм', en: 'Short film' },
     text: {
       bg: 'Филмът показва как българската култура е орисана да оцелее чрез неизбежната среща на миналото и бъдещето.',
       en: 'The film shows how Bulgarian culture is destined to survive through the inevitable encounter of past and future.',
@@ -71,8 +71,8 @@ const contentPillars = [
     icon: GuideIcon,
     title: { bg: 'Пътеводителят', en: 'The Guide' },
     text: {
-      bg: 'Скрити места, занаяти и автентични преживявания из България и Балканите — избрани от душа.',
-      en: 'Hidden places, crafts and authentic experiences across Bulgaria and the Balkans — chosen with soul.',
+      bg: 'Скрити места, занаяти и автентични преживявания из България — избрани от душа.',
+      en: 'Hidden places, crafts and authentic experiences across Bulgaria — chosen with soul.',
     },
     link: '/guide',
   },
@@ -80,8 +80,8 @@ const contentPillars = [
     icon: FactsIcon,
     title: { bg: 'Знаехте ли, че...', en: 'Did You Know' },
     text: {
-      bg: 'Любопитни факти и малко известни истини за историята и наследството на нашата земя.',
-      en: 'Curious facts and little-known truths about the history and heritage of our land.',
+      bg: 'Любопитни и интересни факти свързани с всяка част от културата ни.',
+      en: 'Curious and interesting facts related to every aspect of Bulgarian culture.',
     },
     link: '/facts',
   },
@@ -147,20 +147,20 @@ const teamMembers = [
     image: '/assets/hero.jpg',
   },
   {
-    name: 'Име Фамилия',
-    role: { bg: 'Роля / Специалност', en: 'Role / Specialty' },
+    name: 'Николай Килифарев',
+    role: { bg: 'Програмист', en: 'Programmer' },
     bio: {
-      bg: 'Кратко описание за члена на екипа, неговия принос и роля в проекта.',
-      en: 'Short bio about the team member, their contribution, and role in the project.',
+      bg: 'Разработчик на сайта на УбалканЪ. Отговаря за техническата реализация и онлайн присъствието на проекта.',
+      en: 'Developer of the UBalkana website. Responsible for the technical implementation and online presence of the project.',
     },
     image: '/assets/hero-full.jpg',
   },
   {
-    name: 'Име Фамилия',
-    role: { bg: 'Роля / Специалност', en: 'Role / Specialty' },
+    name: 'Мартин Белчев',
+    role: { bg: 'Обработчик', en: 'Editor' },
     bio: {
-      bg: 'Кратко описание за члена на екипа, неговия принос и роля в проекта.',
-      en: 'Short bio about the team member, their contribution, and role in the project.',
+      bg: 'Отговаря за обработката и редакцията на съдържанието в У Балканъ.',
+      en: 'Responsible for the processing and editing of content at U Balkana.',
     },
     image: '/assets/hero.jpg',
   },
@@ -204,8 +204,8 @@ export default function GoalsPage({ locale }: Props) {
       <section className="manifesto-card">
         <blockquote className="manifesto-text">
           {locale === 'bg'
-            ? '„У Балканъ е място за истории, лични гласове и културни следи от България. Заедно с Мартин Петков създаваме съдържание, което е красиво, смислено и близко до младите хора."'
-            : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria. Together with Martin Petkov, we create content that is beautiful, meaningful and close to young people."'}
+            ? '„У Балканъ е място за истории, лични гласове и културни следи от България.Създаваме съдържание, което е красиво, смислено и близко до младите хора."'
+            : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria. We create content that is beautiful, meaningful and close to young people."'}
         </blockquote>
       </section>
 
