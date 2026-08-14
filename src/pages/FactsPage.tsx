@@ -18,11 +18,12 @@ const categories: FactCategory[] = [
   { id: 'architecture', name: { bg: 'Архитектура и забележителности', en: 'Architecture & Landmarks' } },
   { id: 'cuisine', name: { bg: 'Българска кухня', en: 'Bulgarian Cuisine' } },
   { id: 'folklore', name: { bg: 'Фолклор', en: 'Folklore' } },
-  { id: 'crafts', name: { bg: 'Занаяти', en: 'Crafts' } },
+  { id: 'crafts', name: { bg: 'Занаяти и индустрия', en: 'Crafts & Industry' } },
   { id: 'faith', name: { bg: 'Вяра и духовност', en: 'Faith & Spirituality' } },
   { id: 'art', name: { bg: 'Изкуство', en: 'Art' } },
   { id: 'sports', name: { bg: 'Спорт', en: 'Sports' } },
   { id: 'language', name: { bg: 'Български език', en: 'Bulgarian Language' } },
+  { id: 'personalities', name: { bg: 'Знаменити личности', en: 'Famous Personalities' } },
 ];
 
 const facts = [
@@ -99,7 +100,7 @@ const facts = [
   {
     id: 8,
     catId: 'crafts',
-    category: { bg: 'Занаяти', en: 'Crafts' },
+    category: { bg: 'Занаяти и индустрия', en: 'Crafts & Industry' },
     title: { bg: 'Самоковската и Тревненската школи', en: 'Samokov & Tryavna Schools' },
     text: {
       bg: 'Майсторите от Възраждането са създали уникални дърворезби, медникарски съдове и иконописи, разпознаваеми из целия Балкански полуостров.',
@@ -126,6 +127,16 @@ const facts = [
       en: 'Stefka Kostadinova set the high jump world record of 2.09m in 1987 in Rome, which stood unbroken for nearly four decades.',
     },
   },
+  {
+    id: 11,
+    catId: 'personalities',
+    category: { bg: 'Знаменити личности', en: 'Famous Personalities' },
+    title: { bg: 'Джон Атанасов — Бащата на компютъра', en: 'John Atanasoff — Father of the Computer' },
+    text: {
+      bg: 'Американският физик и изобретател от български произход Джон Атанасов създава първия електронен цифров компютър (ABC) през 1937–1942 г.',
+      en: 'American physicist and inventor of Bulgarian descent John Atanasoff created the first electronic digital computer (ABC) between 1937 and 1942.',
+    },
+  },
 ];
 
 export default function FactsPage({ locale }: Props) {
@@ -148,8 +159,8 @@ export default function FactsPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'ЗНАЕХТЕ ЛИ, ЧЕ...' : 'DID YOU KNOW THAT...'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? '10-те ключови рубрики за нашата история, традиции, природа и културно наследство.'
-            : '10 key categories about our history, traditions, nature and cultural heritage.'}
+            ? '11-те ключови рубрики за нашата история, традиции, природа и културно наследство.'
+            : '11 key categories about our history, traditions, nature and cultural heritage.'}
         </p>
       </header>
 

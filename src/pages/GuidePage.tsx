@@ -71,8 +71,8 @@ export default function GuidePage({ locale }: Props) {
         transition={{ delay: 0.45, duration: 0.5 }}
       >
         {locale === 'bg'
-          ? 'Подготвяме нещо специално — пътеводител за открити духом, за хора, готови да открият истинска България и Балканите.'
-          : 'We are preparing something special — a guide for the open-hearted, for people ready to discover authentic Bulgaria and the Balkans.'}
+          ? 'Подготвяме нещо много специално – пътеводител за онези, които искат да опознаят България отвъд познатото и да открият всичко, което тя има да предложи.'
+          : 'We’re preparing something special — a guide for those who want to explore Bulgaria beyond the known and discover everything it has to offer.'}
       </motion.p>
     </motion.div>
   );
