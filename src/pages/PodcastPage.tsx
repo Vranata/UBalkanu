@@ -5,24 +5,24 @@ import type { Locale } from '../content';
 // SVG Icons
 const MicSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="24" height="24">
-    <rect x="24" y="8" width="16" height="24" rx="8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M16 22a16 16 0 0 0 32 0" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M32 38v10M24 48h16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+    <rect x="24" y="8" width="16" height="24" rx="8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 22a16 16 0 0 0 32 0" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M32 38v10M24 48h16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const TimerSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="14" height="14">
-    <circle cx="32" cy="36" r="20" stroke="#bfa15f" strokeWidth="2"/>
-    <path d="M32 24v14l8 5" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M26 8h12M32 8v8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="32" cy="36" r="20" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M32 24v14l8 5" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M26 8h12M32 8v8" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const PersonSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="14" height="14">
-    <circle cx="32" cy="20" r="10" stroke="#bfa15f" strokeWidth="2"/>
-    <path d="M10 56c0-12 9-20 22-20s22 8 22 20" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
+    <circle cx="32" cy="20" r="10" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M10 56c0-12 9-20 22-20s22 8 22 20" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
@@ -134,26 +134,29 @@ const episodes: Episode[] = [
 ];
 
 export default function PodcastPage({ locale }: Props) {
-  const [activeEpisode, setActiveEpisode] = useState<number | null>(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedSeason, setSelectedSeason] = useState<string>('all');
   const [copiedId, setCopiedId] = useState<number | null>(null);
 
-  const featuredEp = episodes.find((e) => e.id === activeEpisode) || episodes[0];
+  // The most recent episode is the last one in the list (or highest ID)
+  const featuredEp = useMemo(() => {
+    return episodes[episodes.length - 1] || episodes[0];
+  }, []);
 
   // Filtering logic
   const filteredEpisodes = useMemo(() => {
     return episodes.filter((ep) => {
-      const matchesCategory = selectedCategory === 'all' || ep.category === selectedCategory;
+      // All current episodes belong to Season 1 ('season1')
+      const matchesSeason = selectedSeason === 'all' || selectedSeason === 'season1';
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !q ||
         ep.title[locale].toLowerCase().includes(q) ||
         ep.guest[locale].toLowerCase().includes(q) ||
         ep.description[locale].toLowerCase().includes(q);
-      return matchesCategory && matchesSearch;
+      return matchesSeason && matchesSearch;
     });
-  }, [searchQuery, selectedCategory, locale]);
+  }, [searchQuery, selectedSeason, locale]);
 
   const handleShare = (id: number, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -175,15 +178,15 @@ export default function PodcastPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'ПОДКАСТ У БАЛКАНЪ' : 'U BALKANA PODCAST'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? 'Истории, личности и теми, които свързват миналото, настоящето и бъдещето.'
-            : 'Stories, personalities and topics connecting past, present and future.'}
+            ? 'Истории на хората, които съхраняват българското.'
+            : 'Stories of the people who are preserving the Bulgarian spirit.'}
         </p>
       </header>
 
       {/* Hero featured player */}
       <div className="podcast-player-hero">
         <div className="player-badge">
-          <MicSvg /> {locale === 'bg' ? 'Избран епизод' : 'Selected Episode'}
+          <MicSvg /> {locale === 'bg' ? 'Последен епизод' : 'Latest Episode'}
         </div>
         <div className="player-hero-content">
           <a
@@ -218,6 +221,14 @@ export default function PodcastPage({ locale }: Props) {
               >
                 ▶ {locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'} ({featuredEp.duration})
               </a>
+              <button
+                className={`ep-share-btn ${copiedId === featuredEp.id ? 'copied' : ''}`}
+                onClick={(e) => handleShare(featuredEp.id, e)}
+                title={locale === 'bg' ? 'Сподели епизода' : 'Share episode'}
+              >
+                {copiedId === featuredEp.id ? <CheckSvg /> : <ShareSvg />}
+                <span>{copiedId === featuredEp.id ? (locale === 'bg' ? 'Копирано!' : 'Copied!') : (locale === 'bg' ? 'Сподели' : 'Share')}</span>
+              </button>
             </div>
           </div>
         </div>
@@ -247,28 +258,16 @@ export default function PodcastPage({ locale }: Props) {
 
           <div className="category-chips">
             <button
-              className={`chip ${selectedCategory === 'all' ? 'active' : ''}`}
-              onClick={() => setSelectedCategory('all')}
+              className={`chip ${selectedSeason === 'all' ? 'active' : ''}`}
+              onClick={() => setSelectedSeason('all')}
             >
               {locale === 'bg' ? 'Всички' : 'All'}
             </button>
             <button
-              className={`chip ${selectedCategory === 'music' ? 'active' : ''}`}
-              onClick={() => setSelectedCategory('music')}
+              className={`chip ${selectedSeason === 'season1' ? 'active' : ''}`}
+              onClick={() => setSelectedSeason('season1')}
             >
-              {locale === 'bg' ? 'Музика' : 'Music'}
-            </button>
-            <button
-              className={`chip ${selectedCategory === 'crafts' ? 'active' : ''}`}
-              onClick={() => setSelectedCategory('crafts')}
-            >
-              {locale === 'bg' ? 'Занаяти' : 'Crafts'}
-            </button>
-            <button
-              className={`chip ${selectedCategory === 'travel' ? 'active' : ''}`}
-              onClick={() => setSelectedCategory('travel')}
-            >
-              {locale === 'bg' ? 'Пътешествия' : 'Travel'}
+              {locale === 'bg' ? 'Сезон 1' : 'Season 1'}
             </button>
           </div>
         </div>
@@ -289,8 +288,7 @@ export default function PodcastPage({ locale }: Props) {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
-                  className={`episode-card ${activeEpisode === ep.id ? 'active' : ''}`}
-                  onClick={() => setActiveEpisode(ep.id)}
+                  className="episode-card"
                 >
                   {/* Thumbnail in the top center - clicks directly to YouTube */}
                   <a
@@ -298,7 +296,6 @@ export default function PodcastPage({ locale }: Props) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ep-thumb-container"
-                    onClick={(e) => e.stopPropagation()}
                     title={locale === 'bg' ? 'Гледай в YouTube' : 'Watch on YouTube'}
                   >
                     <img src={getThumbnailUrl(ep)} alt={ep.title[locale]} className="ep-thumb" />
@@ -329,7 +326,6 @@ export default function PodcastPage({ locale }: Props) {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="ep-play-btn"
-                        onClick={(e) => e.stopPropagation()}
                       >
                         ▶ {locale === 'bg' ? 'Гледай' : 'Watch'}
                       </a>
