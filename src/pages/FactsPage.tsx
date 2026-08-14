@@ -159,8 +159,8 @@ export default function FactsPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'ЗНАЕХТЕ ЛИ, ЧЕ...' : 'DID YOU KNOW THAT...'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? '11-те ключови рубрики за нашата история, традиции, природа и културно наследство.'
-            : '11 key categories about our history, traditions, nature and cultural heritage.'}
+            ? '11-те ключови рубрики за нашето културно наследство.'
+            : '11 key categories about our cultural heritage.'}
         </p>
       </header>
 

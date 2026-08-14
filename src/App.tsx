@@ -1,7 +1,8 @@
-import { useMemo, useState } from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Link, Navigate } from 'react-router-dom';
+import { useEffect, useRef, useMemo, useState } from 'react';
+import { BrowserRouter, Routes, Route, NavLink, Link, Navigate, useLocation } from 'react-router-dom';
 import { navigation, quoteCopy, type Locale } from './content';
 import SidePatterns from './components/SidePatterns';
+import Footer from './components/Footer';
 
 import HomePage from './pages/HomePage';
 import PodcastPage from './pages/PodcastPage';
@@ -14,6 +15,30 @@ import FilmPage from './pages/FilmPage';
 function AppContent() {
   const [locale, setLocale] = useState<Locale>('bg');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
+  const lastScrollY = useRef(0);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const diff = currentY - lastScrollY.current;
+      if (Math.abs(diff) < 8) return; // ignore tiny jitter
+      if (diff > 0 && currentY > 80) {
+        setHeaderHidden(true);  // scrolling down
+      } else {
+        setHeaderHidden(false); // scrolling up
+      }
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const activeNavigation = useMemo(
     () =>
@@ -31,7 +56,7 @@ function AppContent() {
     <div className={`app-shell ${mobileMenuOpen ? 'mobile-menu-active' : ''}`}>
       <SidePatterns />
       <div className="page-shell">
-        <header className="topbar">
+        <header className={`topbar${headerHidden ? ' topbar--hidden' : ''}`}>
           <Link className="brand" to="/" onClick={closeMobileMenu} aria-label="У БАЛКАНЪ home">
             <img className="brand-mark" src="/assets/balkana-logo.png" alt="У Балканъ logo" />
             <span className="brand-name">У БАЛКАНЪ</span>
@@ -88,20 +113,20 @@ function AppContent() {
             </div>
 
             <div className="social-icons" aria-label="Social media">
-              <a href="https://www.instagram.com/ubalkanapodcast.bg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <a href="https://www.instagram.com/ubalkanabg" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <a href="https://www.youtube.com/@ubalkanabg" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z" />
                   <polygon points="9.7 15.5 15.8 12 9.7 8.5 9.7 15.5" fill="#140f0c" />
                 </svg>
               </a>
-              <a href="https://www.tiktok.com/@ubalkanapodcastbg" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <a href="https://www.tiktok.com/@ubalkanabg" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                   <path d="M19.6 3h-3.2v11.4a3.2 3.2 0 1 1-3.2-3.2c.3 0 .6 0 .9.1V8c-.3 0-.6-.1-.9-.1a6.4 6.4 0 1 0 6.4 6.4V8.4A9.5 9.5 0 0 0 24 9.3V6.2A6.4 6.4 0 0 1 19.6 3z" />
                 </svg>
@@ -138,6 +163,8 @@ function AppContent() {
             <div className="bottom-quote-ornament">❖ ❖ ❖</div>
           </div>
         </section>
+
+        <Footer locale={locale} />
       </div>
     </div>
   );

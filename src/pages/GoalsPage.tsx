@@ -71,7 +71,7 @@ const contentPillars = [
     icon: GuideIcon,
     title: { bg: 'Пътеводителят', en: 'The Guide' },
     text: {
-      bg: 'Скрити места, занаяти и автентични преживявания из България — избрани от душа.',
+      bg: 'Скрити места, занаяти и автентични преживявания из България — подбрани от душа.',
       en: 'Hidden places, crafts and authentic experiences across Bulgaria — chosen with soul.',
     },
     link: '/guide',
@@ -90,7 +90,7 @@ const contentPillars = [
 const socialLinks = [
   {
     name: 'Instagram',
-    url: 'https://www.instagram.com/ubalkanapodcast.bg',
+    url: 'https://www.instagram.com/ubalkanabg',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" width="24" height="24">
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -110,7 +110,7 @@ const socialLinks = [
   },
   {
     name: 'TikTok',
-    url: 'https://www.tiktok.com/@ubalkanapodcastbg',
+    url: 'https://www.tiktok.com/@ubalkanabg',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
         <path d="M19.6 3h-3.2v11.4a3.2 3.2 0 1 1-3.2-3.2c.3 0 .6 0 .9.1V8c-.3 0-.6-.1-.9-.1a6.4 6.4 0 1 0 6.4 6.4V8.4A9.5 9.5 0 0 0 24 9.3V6.2A6.4 6.4 0 0 1 19.6 3z" />
@@ -119,7 +119,7 @@ const socialLinks = [
   },
   {
     name: 'YouTube',
-    url: 'https://youtube.com',
+    url: 'https://www.youtube.com/@ubalkanabg',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
         <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.8.5 9.4.5 9.4.5s7.6 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z" />
@@ -130,7 +130,7 @@ const socialLinks = [
 ];
 
 const stats = [
-  { value: '2024', label: { bg: 'Основан', en: 'Founded' } },
+  { value: '2025', label: { bg: 'Основан', en: 'Founded' } },
   { value: '4+', label: { bg: 'Епизода', en: 'Episodes' } },
   { value: '10K+', label: { bg: 'Гледания', en: 'Views' } },
   { value: '∞', label: { bg: 'Истории', en: 'Stories' } },
@@ -141,7 +141,7 @@ const teamMembers = [
     name: 'Мартин Петков',
     role: { bg: 'Основател & Водещ', en: 'Founder & Host' },
     bio: {
-      bg: 'Създател на „У Балканъ“, движен от страстта към българската история, традиции и културно наследство.',
+      bg: 'Създател на „У БалканЪ“, движен от страстта към българската история, традиции и културно наследство.',
       en: 'Creator of "U Balkana", driven by a passion for Bulgarian history, traditions, and cultural heritage.',
     },
     image: '/assets/hero.jpg',
@@ -157,7 +157,7 @@ const teamMembers = [
   },
   {
     name: 'Мартин Белчев',
-    role: { bg: 'Обработчик', en: 'Editor' },
+    role: { bg: 'Монтажист', en: 'Editor' },
     bio: {
       bg: 'Отговаря за обработката и редакцията на съдържанието в У Балканъ.',
       en: 'Responsible for the processing and editing of content at U Balkana.',
@@ -195,19 +195,12 @@ export default function GoalsPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'У БАЛКАНЪ' : 'U BALKANA'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? 'Подкаст, пътеводител и културна мисия за България.'
-            : 'A podcast, guide and cultural mission for Bulgaria.'}
+            ? 'Подкаст, пътеводител и културна мисия.'
+            : 'A podcast, guide and cultural mission.'}
         </p>
       </header>
 
-      {/* ── Hero Manifesto ── */}
-      <section className="manifesto-card">
-        <blockquote className="manifesto-text">
-          {locale === 'bg'
-            ? '„У Балканъ е място за истории, лични гласове и културни следи от България.   Създаваме съдържание, което е красиво, смислено и близко до младите хора."'
-            : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria. We create content that is beautiful, meaningful and close to young people."'}
-        </blockquote>
-      </section>
+
 
       {/* ── Stats row ── */}
       <motion.section
@@ -261,8 +254,8 @@ export default function GoalsPage({ locale }: Props) {
             </p>
             <p>
               {locale === 'bg'
-                ? 'Всяка история, всеки епизод, всеки кадър е направен с уважение към миналото, но с поглед към бъдещето. Защото тук, в България, всеки от нас носи част от историята. И всеки от нас може да я продължи.'
-                : 'Every story, every episode, every frame is made with respect for the past, but with a view to the future. Because here, in Bulgaria, each of us carries a piece of history. And each of us can continue it.'}
+                ? 'Всяка история, всеки епизод, всеки кадър е направен с уважение към миналото, но с поглед към бъдещето. Защото тук, в България, всеки от нас носи част от историята, и всеки от нас може да я продължи.'
+                : 'Every story, every episode, every frame is made with respect for the past, but with a view to the future. Because here, in Bulgaria, each of us carries a piece of history, and each of us can continue it.'}
             </p>
           </div>
           <aside className="ubalkana-values">
@@ -355,7 +348,7 @@ export default function GoalsPage({ locale }: Props) {
       {/* ── Follow us ── */}
       <section className="ubalkana-section ubalkana-follow">
         <h2 className="ubalkana-section-heading">
-          {locale === 'bg' ? 'СЛЕДВАЙТЕ НИ' : 'FOLLOW US'}
+          {locale === 'bg' ? 'ПОСЛЕДВАЙТЕ НИ' : 'FOLLOW US'}
         </h2>
         <p className="ubalkana-follow-subtitle">
           {locale === 'bg'

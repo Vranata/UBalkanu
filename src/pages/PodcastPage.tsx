@@ -178,7 +178,7 @@ export default function PodcastPage({ locale }: Props) {
       transition={{ duration: 0.4 }}
     >
       <header className="page-header">
-        <span className="page-badge">{locale === 'bg' ? 'Аудио и Разговори' : 'Audio & Conversations'}</span>
+        <span className="page-badge">{locale === 'bg' ? 'Историите на България' : 'The stories of Bulgaria'}</span>
         <h1>{locale === 'bg' ? 'ПОДКАСТ У БАЛКАНЪ' : 'U BALKANA PODCAST'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'

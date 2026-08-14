@@ -1,9 +1,21 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <circle cx="32" cy="32" r="26" stroke="#bfa15f" stroke-width="2"/>
-  <circle cx="32" cy="32" r="18" stroke="#bfa15f" stroke-width="2" stroke-dasharray="4 4"/>
-  <circle cx="32" cy="32" r="8" fill="#bfa15f" fill-opacity="0.2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Outer Ring -->
+  <circle cx="32" cy="32" r="26" stroke="#bfa15f" stroke-width="2.5"/>
+  <!-- Middle Ring -->
+  <circle cx="32" cy="32" r="17" stroke="#bfa15f" stroke-width="2"/>
+  <!-- Inner Ring / Bullseye Background -->
+  <circle cx="32" cy="32" r="8" fill="#bfa15f" fill-opacity="0.25" stroke="#bfa15f" stroke-width="2"/>
+  <!-- Center Bullseye Dot -->
   <circle cx="32" cy="32" r="3" fill="#bfa15f"/>
-  <path d="M32 6v8M32 50v8M6 32h8M50 32h8" stroke="#bfa15f" stroke-width="2" stroke-linecap="round"/>
-  <path d="M56 8L36 28" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
-  <path d="M50 6h6v6M58 12l-4-4" stroke="#bfa15f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Crosshairs -->
+  <line x1="32" y1="2" x2="32" y2="10" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="54" x2="32" y2="62" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="2" y1="32" x2="10" y2="32" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="54" y1="32" x2="62" y2="32" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Arrow hitting bullseye -->
+  <path d="M54 10L35 29" stroke="#bfa15f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M47 9l7 1v7" stroke="#bfa15f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M57 7l-5 5" stroke="#bfa15f" stroke-width="1.5" stroke-linecap="round"/>
 </svg>

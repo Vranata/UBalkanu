@@ -38,17 +38,17 @@ export const navigation = [
 
 export const heroCopy: Record<Locale, { eyebrow: string; title: string; subtitle: string; body: string; cta: string }> = {
   bg: {
-    eyebrow: 'Подкаст, пътеводител и културна мисия',
+    eyebrow: 'Всичко за България на един клик разстояние',
     title: 'У БАЛКАНЪ',
     subtitle: 'Където корените говорят, а бъдещето слуша',
-    body: 'Място за истории, лични гласове и културни следи от България. Заедно с Мартин Петков създаваме съдържание, което е красиво, смислено и близко до младите хора.',
+    body: 'Място за истории, лични гласове и културни следи от България. Създаваме съдържание, което е красиво, смислено и близко до всички хора.',
     cta: 'Започни пътуването',
   },
   en: {
-    eyebrow: 'Podcast, guide and cultural mission',
+    eyebrow: 'All of Bulgaria just a click away',
     title: 'U Balkana',
     subtitle: 'Where the roots speak and the future listens',
-    body: 'A space for stories, personal voices and cultural traces from Bulgaria. Together with Martin Petkov, we create content that is beautiful, meaningful and close to young people.',
+    body: 'A space for stories, personal voices and cultural traces from Bulgaria. We create content that is beautiful, meaningful and close to young people.',
     cta: 'Start the journey',
   },
 };
@@ -65,7 +65,7 @@ export const featureCards: Feature[] = [
   },
   {
     id: 'mission',
-    icon: 'flag',
+    icon: 'target',
     bg: 'Защо създадохме „У Балканъ" и какво искаме да постигнем.',
     copy: {
       bg: { title: 'МИСИЯТА', description: 'Защо създадохме „У Балканъ" и какво искаме да постигнем.' },

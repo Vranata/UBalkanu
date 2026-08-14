@@ -71,8 +71,8 @@ export default function MissionPage({ locale }: Props) {
       transition={{ duration: 0.4 }}
     >
       <header className="page-header">
-        <span className="page-badge">{locale === 'bg' ? 'За проекта' : 'About Project'}</span>
-        <h1>{locale === 'bg' ? 'МИСИЯТА У БАЛКАНЪ' : 'THE U BALKANA MISSION'}</h1>
+        <span className="page-badge">{locale === 'bg' ? 'Целите' : 'Goals'}</span>
+        <h1>{locale === 'bg' ? 'МИСИЯТА "У БАЛКАНЪ"' : 'THE "U BALKANA" MISSION'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
             ? 'Вярваме, че културата е жива само докато се предава от поколение на поколение.'
@@ -83,8 +83,8 @@ export default function MissionPage({ locale }: Props) {
       <section className="manifesto-card">
         <blockquote className="manifesto-text">
           {locale === 'bg'
-            ? '„У Балканъ роди своя глас от любовта към преданията и древния български дух. Ние не събираме музейни експонати, а съживяваме живата памет на нашия род."'
-            : '"U Balkana was born out of love for folklore and the ancient Bulgarian spirit. We do not gather museum items; we revive the living memory of our people."'}
+            ? '„У БалканЪ роди своя глас от любовта към преданията и древния български дух. Ние не събираме музейни експонати, а съживяваме паметта на нашия народ."'
+            : '"U Balkana was born out of love for folklore and the ancient Bulgarian spirit. We do not gather museum items; we revive the memory of our people."'}
         </blockquote>
       </section>
 
