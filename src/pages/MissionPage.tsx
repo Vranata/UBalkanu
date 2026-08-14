@@ -56,8 +56,8 @@ const pillars = [
     icon: HowIcon,
     title: { bg: 'Как го правим', en: 'How We Do It' },
     text: {
-      bg: 'Чрез подкаст, кратко видео, пътеводители и уникален визуален стил, вдъхновен от традиционното изкуство на Балканите. Всичко с грижа и уважение.',
-      en: 'Through podcasting, short film, guides and a unique visual style inspired by traditional Balkan art. Everything crafted with respect.',
+      bg: 'Чрез подкаст, кратко видео, пътеводители и уникален визуален стил, вдъхновен от традиционното българско изкуство. Всичко с грижа и уважение.',
+      en: 'Through podcasting, short film, guides and a unique visual style inspired by traditional Bulgarian art. Everything crafted with respect.',
     },
   },
 ];
@@ -84,8 +84,8 @@ export default function MissionPage({ locale }: Props) {
       <section className="manifesto-card">
         <blockquote className="manifesto-text">
           {locale === 'bg'
-            ? '„У Балканъ роди своя глас от любовта към преданията, балкана и древния български дух. Ние не събираме музейни експонати, а съживяваме живата памет на нашия род."'
-            : '"U Balkana was born out of love for folklore, the mountain range, and the ancient Bulgarian spirit. We do not gather museum items; we revive the living memory of our people."'}
+            ? '„У Балканъ роди своя глас от любовта към преданията и древния български дух. Ние не събираме музейни експонати, а съживяваме живата памет на нашия род."'
+            : '"U Balkana was born out of love for folklore and the ancient Bulgarian spirit. We do not gather museum items; we revive the living memory of our people."'}
         </blockquote>
       </section>
 

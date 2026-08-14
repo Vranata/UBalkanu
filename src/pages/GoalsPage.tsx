@@ -53,8 +53,8 @@ const contentPillars = [
     icon: PodcastIcon,
     title: { bg: 'Подкаст', en: 'Podcast' },
     text: {
-      bg: 'Задълбочени разговори с творци, историци и пазители на традициите — издаван всяка втора седмица.',
-      en: 'In-depth conversations with creators, historians, and keepers of tradition — released every two weeks.',
+      bg: 'Разговори с личности, които пазят културата жива. Нов епизод всяка седмица.',
+      en: 'Conversations with personalities who keep the culture alive. A new episode every week.',
     },
     link: '/podcast',
   },
@@ -62,8 +62,8 @@ const contentPillars = [
     icon: FilmIcon,
     title: { bg: 'Документален филм', en: 'Documentary Film' },
     text: {
-      bg: 'Визуална ода към Балканите — пътуване из земята, хората и духа, разказани с образ и музика.',
-      en: 'A visual ode to the Balkans — a journey through land, people and spirit, told through image and music.',
+      bg: 'Филмът показва как българската култура е орисана да оцелее чрез неизбежната среща на миналото и бъдещето.',
+      en: 'The film shows how Bulgarian culture is destined to survive through the inevitable encounter of past and future.',
     },
     link: '/film',
   },
@@ -71,8 +71,8 @@ const contentPillars = [
     icon: GuideIcon,
     title: { bg: 'Пътеводителят', en: 'The Guide' },
     text: {
-      bg: 'Скрити места, занаяти и автентични преживявания из България и Балканите — избрани по душа.',
-      en: 'Hidden places, crafts and authentic experiences across Bulgaria and the Balkans — selected by soul.',
+      bg: 'Скрити места, занаяти и автентични преживявания из България и Балканите — избрани от душа.',
+      en: 'Hidden places, crafts and authentic experiences across Bulgaria and the Balkans — chosen with soul.',
     },
     link: '/guide',
   },
@@ -132,7 +132,7 @@ const socialLinks = [
 const stats = [
   { value: '2024', label: { bg: 'Основан', en: 'Founded' } },
   { value: '4+', label: { bg: 'Епизода', en: 'Episodes' } },
-  { value: '2', label: { bg: 'Езика', en: 'Languages' } },
+  { value: '10K+', label: { bg: 'Гледания', en: 'Views' } },
   { value: '∞', label: { bg: 'Истории', en: 'Stories' } },
 ];
 
@@ -165,8 +165,8 @@ export default function GoalsPage({ locale }: Props) {
         <h1>{locale === 'bg' ? 'У БАЛКАНЪ' : 'U BALKANA'}</h1>
         <p className="page-subtitle">
           {locale === 'bg'
-            ? 'Подкаст, пътеводител и културна мисия от сърцето на Балканите.'
-            : 'A podcast, guide and cultural mission from the heart of the Balkans.'}
+            ? 'Подкаст, пътеводител и културна мисия за България.'
+            : 'A podcast, guide and cultural mission for Bulgaria.'}
         </p>
       </header>
 
@@ -174,8 +174,8 @@ export default function GoalsPage({ locale }: Props) {
       <section className="manifesto-card">
         <blockquote className="manifesto-text">
           {locale === 'bg'
-            ? '„У Балканъ е място за истории, лични гласове и културни следи от България и Балканите. Създаваме съдържание, което е едновременно красиво, полезно и близко до младите хора."'
-            : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria and the Balkans. We create content that is beautiful, useful and close to young people."'}
+            ? '„У Балканъ е място за истории, лични гласове и културни следи от България. Заедно с Мартин Петков създаваме съдържание, което е красиво, смислено и близко до младите хора."'
+            : '"U Balkana is a space for stories, personal voices and cultural traces from Bulgaria. Together with Martin Petkov, we create content that is beautiful, meaningful and close to young people."'}
         </blockquote>
       </section>
 
@@ -220,19 +220,19 @@ export default function GoalsPage({ locale }: Props) {
       {/* ── Who we are ── */}
       <section className="ubalkana-section">
         <h2 className="ubalkana-section-heading">
-          {locale === 'bg' ? 'КОЙ СМЕ НИЕ' : 'WHO WE ARE'}
+          {locale === 'bg' ? 'КОИ СМЕ НИЕ' : 'WHO WE ARE'}
         </h2>
         <div className="ubalkana-who-grid">
           <div className="ubalkana-who-text">
             <p>
               {locale === 'bg'
-                ? 'У Балканъ е независим творчески проект, роден от любовта към историята, традициите и хората на Балканите. Вярваме, че всяка история заслужава да бъде разказана — с уважение, с топлота и с красота.'
-                : 'U Balkana is an independent creative project, born from love for the history, traditions and people of the Balkans. We believe every story deserves to be told — with respect, warmth and beauty.'}
+                ? 'У Балканъ е независим творчески проект, роден от любовта към историята, традициите и хората на България. Вярваме, че всяка история заслужава да бъде разказана — с уважение, с топлота и с красота.'
+                : 'U Balkana is an independent creative project, born from love for the history, traditions and people of Bulgaria. We believe every story deserves to be told — with respect, warmth and beauty.'}
             </p>
             <p>
               {locale === 'bg'
-                ? 'Нашата цел е да свържем поколенията и да направим богатото балканско наследство достъпно за всеки — независимо дали живее в България или в другия край на света.'
-                : 'Our goal is to connect generations and make the rich Balkan heritage accessible to everyone — whether they live in Bulgaria or on the other side of the world.'}
+                ? 'Нашата цел е да свържем поколенията и да направим богатото българско наследство достъпно за всеки — независимо дали живее в България или в другия край на света.'
+                : 'Our goal is to connect generations and make the rich Bulgarian heritage accessible to everyone — whether they live in Bulgaria or on the other side of the world.'}
             </p>
           </div>
           <aside className="ubalkana-values">
