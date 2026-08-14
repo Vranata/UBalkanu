@@ -43,60 +43,127 @@ type Props = {
 export default function FilmPage({ locale }: Props) {
   return (
     <motion.div
-      className="page-detail-container"
+      className="page-detail-container coming-soon-container"
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -18 }}
       transition={{ duration: 0.4 }}
     >
-      <header className="page-header">
-        <span className="page-badge">{locale === 'bg' ? 'Документален Проект' : 'Documentary Short'}</span>
-        <h1>{locale === 'bg' ? 'КЪСОМЕТРАЖЕН ФИЛМ „У БАЛКАНЪ“' : 'U BALKANA SHORT FILM'}</h1>
-        <p className="page-subtitle">
-          {locale === 'bg'
-            ? 'Отвъд думите — история за корените, разказана с образ, кинематографична музика и тишина.'
-            : 'Beyond words — a story of roots told through imagery, cinematic music, and silence.'}
-        </p>
-      </header>
+      {/* Animated compass */}
+      <motion.div
+        className="coming-soon-icon"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+      >
+        <CompassSvg />
+      </motion.div>
 
-      <div className="film-video-stage">
-        <div className="video-placeholder">
-          <motion.div
-            className="coming-soon-icon"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
-            style={{ marginBottom: '12px' }}
-          >
-            <CompassSvg />
-          </motion.div>
-          <span className="video-label">
-            {locale === 'bg' ? 'Очаквайте Скоро' : 'Coming Soon'}
-          </span>
-          <p className="video-status">
-            {locale === 'bg' ? 'В процес на постпродукция • Премиера 2027' : 'In Post-Production • Premiere 2027'}
-          </p>
-        </div>
-      </div>
+      {/* Badge */}
+      <motion.span
+        className="page-badge"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.4 }}
+      >
+        {locale === 'bg' ? 'Късометражен филм' : 'Short Film'}
+      </motion.span>
 
-      <div className="film-details-grid">
-        <div className="film-info-card">
-          <h3><ScrollSvg /> {locale === 'bg' ? 'Синопсис' : 'Synopsis'}</h3>
-          <p>
+      {/* Main heading */}
+      <motion.h1
+        className="coming-soon-title"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.25, duration: 0.5 }}
+      >
+        {locale === 'bg' ? 'ОЧАКВАЙТЕ СКОРО' : 'COMING SOON'}
+      </motion.h1>
+
+      {/* Film name */}
+      <motion.h2
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.35, duration: 0.5 }}
+        style={{
+          fontFamily: 'var(--font-title)',
+          fontSize: 'clamp(1.4rem, 3vw, 2.2rem)',
+          color: 'var(--warm)',
+          margin: 0,
+          letterSpacing: '0.06em',
+          fontWeight: 600,
+          textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+        }}
+      >
+        {locale === 'bg' ? '„ПЪТЯ НА ЛИСТОТО“' : '"THE PATH OF THE LEAF"'}
+      </motion.h2>
+
+      {/* Ornament */}
+      <motion.div
+        className="coming-soon-ornament"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        ❖ ❖ ❖
+      </motion.div>
+
+      {/* Subtitle */}
+      <motion.p
+        className="coming-soon-subtitle"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.45, duration: 0.5 }}
+      >
+        {locale === 'bg' ? 'Премиера 2027' : 'Premiere 2027'}
+      </motion.p>
+
+      {/* Production Details */}
+      <motion.div
+        className="film-details-grid"
+        initial={{ opacity: 0, y: 14 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.55, duration: 0.5 }}
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(17rem, 1fr))',
+          gap: '1.5rem',
+          width: '100%',
+          marginTop: '2rem',
+          textAlign: 'left'
+        }}
+      >
+        <div className="film-info-card" style={{
+          padding: '1.8rem',
+          border: '1px solid rgba(214, 186, 141, 0.16)',
+          borderRadius: '0.25rem',
+          background: 'rgba(20, 15, 11, 0.7)'
+        }}>
+          <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--warm)', margin: '0 0 1rem', fontFamily: 'var(--font-title)' }}>
+            <ScrollSvg /> {locale === 'bg' ? 'Синопсис' : 'Synopsis'}
+          </h3>
+          <p style={{ color: 'var(--muted)', lineHeight: '1.7', margin: 0 }}>
             {locale === 'bg'
-              ? 'Филмът показва как българската кутлтура е орисана да оцелее чрез неизбежната среща на миналото и бъдещето.'
+              ? 'Филмът показва как българската култура е орисана да оцелее чрез неизбежната среща на миналото и бъдещето.'
               : 'The film shows how Bulgarian culture is destined to survive through the inevitable encounter of past and future.'}
           </p>
         </div>
 
-        <div className="film-info-card">
-          <h3><FilmSvg /> {locale === 'bg' ? 'За продукцията' : 'About Production'}</h3>
-          <ul>
-            <li><strong>{locale === 'bg' ? 'Жанр:' : 'Genre:'}</strong> {locale === 'bg' ? 'Игрален' : 'Feature film'}</li>
-            <li><strong>{locale === 'bg' ? 'Локации:' : 'Locations:'}</strong>Стара планина</li>
-            <li><strong>{locale === 'bg' ? 'Музика:' : 'Soundtrack:'}</strong> {locale === 'bg' ? 'Класическа и българска народна музика' : 'Classical and Bulgarian folk music'}</li>
+        <div className="film-info-card" style={{
+          padding: '1.8rem',
+          border: '1px solid rgba(214, 186, 141, 0.16)',
+          borderRadius: '0.25rem',
+          background: 'rgba(20, 15, 11, 0.7)'
+        }}>
+          <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--warm)', margin: '0 0 1rem', fontFamily: 'var(--font-title)' }}>
+            <FilmSvg /> {locale === 'bg' ? 'За продукцията' : 'About Production'}
+          </h3>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, color: 'var(--muted)', display: 'flex', flexDirection: 'column', gap: '0.6rem', lineHeight: '1.5' }}>
+            <li><strong style={{ color: 'var(--text)' }}>{locale === 'bg' ? 'Категория:' : 'Category:'}</strong> {locale === 'bg' ? 'Игрален' : 'Feature short'}</li>
+            <li><strong style={{ color: 'var(--text)' }}>{locale === 'bg' ? 'Жанр:' : 'Genre:'}</strong> {locale === 'bg' ? 'Драма/Приключенски' : 'Drama/Adventure'}</li>
+            <li><strong style={{ color: 'var(--text)' }}>{locale === 'bg' ? 'Заснето в:' : 'Filmed in:'}</strong> {locale === 'bg' ? 'България' : 'Bulgaria'}</li>
+            <li><strong style={{ color: 'var(--text)' }}>{locale === 'bg' ? 'Език:' : 'Language:'}</strong> {locale === 'bg' ? 'Български' : 'Bulgarian'}</li>
           </ul>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
