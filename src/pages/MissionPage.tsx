@@ -8,30 +8,29 @@ type Props = {
 // Inline SVG icons matching hero card style
 const WhyIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="48" height="48">
-    <circle cx="32" cy="32" r="22" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M32 18v16" stroke="#bfa15f" strokeWidth="2.5" strokeLinecap="round"/>
-    <circle cx="32" cy="42" r="2" fill="#bfa15f"/>
-    <path d="M22 14a16 16 0 0 1 20 0" stroke="#bfa15f" strokeWidth="1.5" strokeLinecap="round" opacity="0.5"/>
+    <circle cx="32" cy="32" r="22" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M32 18v16" stroke="#bfa15f" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="32" cy="42" r="2" fill="#bfa15f" />
+    <path d="M22 14a16 16 0 0 1 20 0" stroke="#bfa15f" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
   </svg>
 );
 
 const WhoIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="48" height="48">
-    <circle cx="24" cy="20" r="8" stroke="#bfa15f" strokeWidth="2"/>
-    <circle cx="42" cy="20" r="8" stroke="#bfa15f" strokeWidth="2"/>
-    <path d="M8 52c0-10 7-16 16-16s16 6 16 16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M42 36c6 0 14 5 14 16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" opacity="0.6"/>
-    <circle cx="24" cy="20" r="2" fill="#bfa15f" fillOpacity="0.3"/>
-    <circle cx="42" cy="20" r="2" fill="#bfa15f" fillOpacity="0.3"/>
+    <circle cx="24" cy="20" r="8" stroke="#bfa15f" strokeWidth="2" />
+    <circle cx="42" cy="20" r="8" stroke="#bfa15f" strokeWidth="2" />
+    <path d="M8 52c0-10 7-16 16-16s16 6 16 16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M42 36c6 0 14 5 14 16" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" opacity="0.6" />
+    <circle cx="24" cy="20" r="2" fill="#bfa15f" fillOpacity="0.3" />
+    <circle cx="42" cy="20" r="2" fill="#bfa15f" fillOpacity="0.3" />
   </svg>
 );
 
 const HowIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="48" height="48">
-    <path d="M32 8L8 24v32h48V24L32 8z" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M24 56V38a8 8 0 0 1 16 0v18" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M32 16v10M26 22h12" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round"/>
-    <circle cx="32" cy="22" r="1.5" fill="#bfa15f"/>
+    <circle cx="32" cy="32" r="22" stroke="#bfa15f" strokeWidth="2" strokeLinecap="round" />
+    <path d="M26 24c0-3.3 2.7-6 6-6s6 2.7 6 6c0 4-6 5.5-6 10" stroke="#bfa15f" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="32" cy="44" r="2" fill="#bfa15f" />
   </svg>
 );
 
@@ -48,16 +47,16 @@ const pillars = [
     icon: WhoIcon,
     title: { bg: 'Към кого се обръщаме', en: 'Who We Address' },
     text: {
-      bg: 'Към всеки, който иска да знае повече за своя произход — независимо дали е на 18 или на 80 години. Към диаспората, към студентите, към пътешествениците с любопитство.',
-      en: 'To everyone who wants to know more about their origins — whether 18 or 80 years old. To the diaspora, students, and curious travellers.',
+      bg: 'КЪМ ВСЕКИ! Всеки българин е част от инициативата! Правим го достъпно за всички хора, които искат да знаят повече за прозхода и културата си, защото когато нямаш корен си никой, когато си никой си слаб! Колкото повече корени има дървото на У БалканЪ толкова повече ще помогнем на бъдещите поколения да знаят за миналото си и да развиват бъдещето си ТУК в България!',
+      en: 'TO EVERYONE! Every Bulgarian is part of the initiative! We make it accessible to all people who want to know more about their origin and culture, because when you have no roots, you are nobody, and when you are nobody, you are weak! The more roots the tree of U BalkanЪ has, the more we will help future generations to know their past and develop their future HERE in Bulgaria!',
     },
   },
   {
     icon: HowIcon,
     title: { bg: 'Как го правим', en: 'How We Do It' },
     text: {
-      bg: 'Чрез подкаст, кратко видео, пътеводители и уникален визуален стил, вдъхновен от традиционното българско изкуство. Всичко с грижа и уважение.',
-      en: 'Through podcasting, short film, guides and a unique visual style inspired by traditional Bulgarian art. Everything crafted with respect.',
+      bg: '1. Чрез създаване на обединена общност с национална ангажираност.\n\n2. Чрез интересни и истински истории, достъпни и актуални за всички възрастови групи.\n\n3. Чрез модерен дигитален формат и висококачествено съдържание, което свързва традициите с бъдещето.',
+      en: '1. By building a united community with nationwide engagement.\n\n2. Through engaging and authentic stories that are accessible and relevant to all age groups.\n\n3. Through modern digital formats and high-quality content connecting tradition with the future.',
     },
   },
 ];
@@ -94,7 +93,7 @@ export default function MissionPage({ locale }: Props) {
           <article key={i} className="pillar-card">
             <div className="pillar-icon"><pillar.icon /></div>
             <h3>{pillar.title[locale]}</h3>
-            <p>{pillar.text[locale]}</p>
+            <p style={{ whiteSpace: 'pre-line' }}>{pillar.text[locale]}</p>
           </article>
         ))}
       </section>
