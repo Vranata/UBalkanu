@@ -136,6 +136,36 @@ const stats = [
   { value: '∞', label: { bg: 'Истории', en: 'Stories' } },
 ];
 
+const teamMembers = [
+  {
+    name: 'Мартин Петков',
+    role: { bg: 'Основател & Водещ', en: 'Founder & Host' },
+    bio: {
+      bg: 'Създател на „У Балканъ“, движен от страстта към българската история, традиции и културно наследство.',
+      en: 'Creator of "U Balkana", driven by a passion for Bulgarian history, traditions, and cultural heritage.',
+    },
+    image: '/assets/hero.jpg',
+  },
+  {
+    name: 'Име Фамилия',
+    role: { bg: 'Роля / Специалност', en: 'Role / Specialty' },
+    bio: {
+      bg: 'Кратко описание за члена на екипа, неговия принос и роля в проекта.',
+      en: 'Short bio about the team member, their contribution, and role in the project.',
+    },
+    image: '/assets/hero-full.jpg',
+  },
+  {
+    name: 'Име Фамилия',
+    role: { bg: 'Роля / Специалност', en: 'Role / Specialty' },
+    bio: {
+      bg: 'Кратко описание за члена на екипа, неговия принос и роля в проекта.',
+      en: 'Short bio about the team member, their contribution, and role in the project.',
+    },
+    image: '/assets/hero.jpg',
+  },
+];
+
 // ── Component ──────────────────────────────────────────────────────────────
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -258,6 +288,67 @@ export default function GoalsPage({ locale }: Props) {
               </div>
             </div>
           </aside>
+        </div>
+      </section>
+
+      {/* ── Team Section ── */}
+      <section className="ubalkana-section">
+        <h2 className="ubalkana-section-heading">
+          {locale === 'bg' ? 'ЕКИПЪТ' : 'THE TEAM'}
+        </h2>
+        <div className="ubalkana-team-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(16rem, 1fr))',
+          gap: '1.5rem',
+          marginTop: '1.5rem'
+        }}>
+          {teamMembers.map((member, idx) => (
+            <motion.article
+              key={idx}
+              className="team-card"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
+              style={{
+                border: '1px solid rgba(214, 186, 141, 0.16)',
+                borderRadius: '0.25rem',
+                background: 'linear-gradient(165deg, rgba(30, 23, 18, 0.85) 0%, rgba(16, 12, 9, 0.92) 100%)',
+                padding: '1.5rem',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '0.8rem'
+              }}
+            >
+              <div style={{
+                width: '6.5rem',
+                height: '6.5rem',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                border: '2px solid var(--warm)',
+                boxShadow: '0 4px 14px rgba(0,0,0,0.5)',
+                marginBottom: '0.3rem'
+              }}>
+                <img src={member.image} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.15rem', color: 'var(--text)', margin: 0 }}>
+                {member.name}
+              </h3>
+              <span style={{
+                fontFamily: 'var(--font-title)',
+                fontSize: '0.8rem',
+                color: 'var(--accent-soft)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em'
+              }}>
+                {member.role[locale]}
+              </span>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '0.9rem', color: 'var(--muted)', lineHeight: '1.5', margin: 0 }}>
+                {member.bio[locale]}
+              </p>
+            </motion.article>
+          ))}
         </div>
       </section>
 
