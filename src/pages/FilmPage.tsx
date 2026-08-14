@@ -2,6 +2,16 @@ import { motion } from 'framer-motion';
 import type { Locale } from '../content';
 
 // Inline SVG icons matching hero card style
+const CompassSvg = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="72" height="72">
+    <circle cx="32" cy="32" r="28" stroke="#bfa15f" strokeWidth="1.5" opacity="0.4" />
+    <circle cx="32" cy="32" r="22" stroke="#bfa15f" strokeWidth="1.5" />
+    <path d="M32 10v6M32 48v6M10 32h6M48 32h6" stroke="#bfa15f" strokeWidth="1.5" strokeLinecap="round" opacity="0.5" />
+    <path d="M24 24l6 12 12-6-6-12-12 6z" stroke="#bfa15f" strokeWidth="1.5" strokeLinejoin="round" fill="#bfa15f" fillOpacity="0.18" />
+    <circle cx="32" cy="32" r="2.5" fill="#bfa15f" />
+  </svg>
+);
+
 const ClapperSvg = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="56" height="56">
     <rect x="8" y="20" width="48" height="36" rx="2" stroke="#bfa15f" strokeWidth="2" />
@@ -51,7 +61,14 @@ export default function FilmPage({ locale }: Props) {
 
       <div className="film-video-stage">
         <div className="video-placeholder">
-          <div className="play-icon-large"><ClapperSvg /></div>
+          <motion.div
+            className="coming-soon-icon"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 24, repeat: Infinity, ease: 'linear' }}
+            style={{ marginBottom: '12px' }}
+          >
+            <CompassSvg />
+          </motion.div>
           <span className="video-label">
             {locale === 'bg' ? 'Очаквайте Скоро' : 'Coming Soon'}
           </span>
