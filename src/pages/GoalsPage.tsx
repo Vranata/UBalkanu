@@ -226,13 +226,13 @@ export default function GoalsPage({ locale }: Props) {
           <div className="ubalkana-who-text">
             <p>
               {locale === 'bg'
-                ? 'У Балканъ е независим творчески проект, роден от любовта към историята, традициите и хората на България. Вярваме, че всяка история заслужава да бъде разказана — с уважение, с топлота и с красота.'
-                : 'U Balkana is an independent creative project, born from love for the history, traditions and people of Bulgaria. We believe every story deserves to be told — with respect, warmth and beauty.'}
+                ? '„У Балканъ“ е независим творчески проект, създаден от Мартин Петков. Роден от любовта на един човек към културата, традициите и хората на България, проектът има една проста цел — да разказва историите, които си заслужава да помним. И да покаже на младите, че България не е просто място, от което идваме, а място, в което си заслужава да останем, да създаваме и да продължим напред.'
+                : '"U Balkana" is an independent creative project founded by Martin Petkov. Born out of a personal passion for the culture, traditions, and people of Bulgaria, the project has one simple goal — to tell the stories that are worth remembering. And to show young people that Bulgaria is not just a place we come from, but a place where it is worth staying, creating, and moving forward.'}
             </p>
             <p>
               {locale === 'bg'
-                ? 'Нашата цел е да свържем поколенията и да направим богатото българско наследство достъпно за всеки — независимо дали живее в България или в другия край на света.'
-                : 'Our goal is to connect generations and make the rich Bulgarian heritage accessible to everyone — whether they live in Bulgaria or on the other side of the world.'}
+                ? 'Всяка история, всеки епизод, всеки кадър е направен с уважение към миналото, но с поглед към бъдещето. Защото тук, в България, всеки от нас носи част от историята. И всеки от нас може да я продължи.'
+                : 'Every story, every episode, every frame is made with respect for the past, but with a view to the future. Because here, in Bulgaria, each of us carries a piece of history. And each of us can continue it.'}
             </p>
           </div>
           <aside className="ubalkana-values">
