@@ -1,6 +1,8 @@
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import type { Locale } from '../content';
-import { heroCopy, heroQuoteCopy } from '../content';
+import { heroCopy } from '../content';
+import { getDailyQuote } from '../quotes';
 
 type Props = {
   locale: Locale;
@@ -8,7 +10,7 @@ type Props = {
 
 export default function Hero({ locale }: Props) {
   const copy = heroCopy[locale];
-  const heroQuote = heroQuoteCopy[locale];
+  const dailyQuote = useMemo(() => getDailyQuote(), []);
 
   return (
     <section className="hero" id="home">
@@ -22,9 +24,6 @@ export default function Hero({ locale }: Props) {
           <a className="primary-button" href="#podcast">
             {copy.cta}
           </a>
-          <a className="secondary-link" href="#podcast">
-            {locale === 'bg' ? 'Разгледай' : 'Explore'}
-          </a>
         </div>
       </div>
 
@@ -35,8 +34,8 @@ export default function Hero({ locale }: Props) {
         transition={{ duration: 0.9, ease: 'easeOut', delay: 0.2 }}
       >
         <span className="hero-quote-symbol">”</span>
-        <p className="hero-quote-text">{heroQuote.quote}</p>
-        <span className="hero-quote-author">{heroQuote.author}</span>
+        <p className="hero-quote-text">{dailyQuote.quote[locale]}</p>
+        <span className="hero-quote-author">{dailyQuote.author[locale]}</span>
       </motion.aside>
     </section>
   );

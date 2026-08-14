@@ -41,14 +41,14 @@ export const heroCopy: Record<Locale, { eyebrow: string; title: string; subtitle
     eyebrow: 'Подкаст, пътеводител и културна мисия',
     title: 'У БАЛКАНЪ',
     subtitle: 'Където корените говорят, а бъдещето слуша',
-    body: 'Място за истории, лични гласове и културни следи от България и Балканите. Създаваме съдържание, което е едновременно красиво, полезно и близко до младите хора.',
+    body: 'Място за истории, лични гласове и културни следи от България и Балканите. Заедно с Мартин Петков създаваме съдържание, което е красиво, смислено и близко до младите хора.',
     cta: 'Започни пътуването',
   },
   en: {
     eyebrow: 'Podcast, guide and cultural mission',
     title: 'U Balkana',
     subtitle: 'Where the roots speak and the future listens',
-    body: 'A space for stories, personal voices and cultural traces from Bulgaria and the Balkans. We build content that is beautiful, useful and close to young people.',
+    body: 'A space for stories, personal voices and cultural traces from Bulgaria and the Balkans. Together with Martin Petkov, we create content that is beautiful, meaningful and close to young people.',
     cta: 'Start the journey',
   },
 };

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import type { Feature, Locale } from '../content';
 import micIcon from '../assets/icons/mic.svg';
@@ -27,6 +27,7 @@ const iconMap: Record<string, string> = {
 
 export default function FeatureCard({ card, locale, index = 0 }: Props) {
   const iconSrc = iconMap[card.icon] ?? micIcon;
+  const navigate = useNavigate();
 
   return (
     <motion.article
@@ -34,13 +35,15 @@ export default function FeatureCard({ card, locale, index = 0 }: Props) {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.08, duration: 0.45 }}
+      onClick={() => navigate(`/${card.id}`)}
+      style={{ cursor: 'pointer' }}
     >
       <div className="feature-icon" aria-hidden="true">
         <img src={iconSrc} alt="" width={54} height={54} />
       </div>
       <h3>{card.copy[locale].title}</h3>
       <p>{card.copy[locale].description}</p>
-      <Link className="card-link" to={`/${card.id}`} aria-label={card.copy[locale].title}>→</Link>
+      <span className="card-link" aria-label={card.copy[locale].title}>→</span>
     </motion.article>
   );
 }
